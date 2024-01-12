@@ -14,7 +14,11 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TripicaAndroidTest"
+rootProject.name = "TripitacaAndroidTest"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":designsystem")
+include(":features:auth:presentation")
+include(":features:properties:presentation")
+include(":shared")
+include(":features:auth:data")

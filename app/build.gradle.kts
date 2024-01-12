@@ -2,8 +2,8 @@
 plugins {
     alias(libs.plugins.com.android.application)
     alias(libs.plugins.org.jetbrains.kotlin.android)
-    id("tripicaandroid.android.hilt")
-    id("tripicaandroid.android.application.compose")
+    id("tripitacaandroid.android.hilt")
+    id("tripitacaandroid.android.application.compose")
 }
 
 android {
@@ -43,6 +43,9 @@ android {
 
 dependencies {
     implementation(projects.designsystem)
+    implementation(projects.shared)
+    implementation(projects.features.auth.presentation)
+    implementation(projects.features.properties.presentation)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)

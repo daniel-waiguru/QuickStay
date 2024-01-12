@@ -19,28 +19,28 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidLibrary") {
-            id = "tripicaandroid.android.library"
+            id = "tripitacaandroid.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
 
         register("androidLibraryCompose") {
-            id = "tripicaandroid.android.library.compose"
+            id = "tripitacaandroid.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidApplicationCompose") {
-            id = "tripicaandroid.android.application.compose"
+            id = "tripitacaandroid.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidHilt") {
-            id = "tripicaandroid.android.hilt"
+            id = "tripitacaandroid.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
         register("androidFeature") {
-            id = "tripicaandroid.android.feature"
+            id = "tripitacaandroid.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
         register("jvmLibrary") {
-            id = "tripicaandroid.jvm.library"
+            id = "tripitacaandroid.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
         }
     }
