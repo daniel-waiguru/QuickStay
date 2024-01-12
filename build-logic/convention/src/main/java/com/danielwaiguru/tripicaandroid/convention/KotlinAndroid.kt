@@ -17,9 +17,9 @@ internal fun Project.configureKotlinAndroid(
     commonExtension: CommonExtension<*, *, *, *, *>,
 ) {
     commonExtension.apply {
-        compileSdk = 34
+        compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
         defaultConfig {
-            minSdk = 24
+            minSdk = libs.findVersion("minSdk").get().toString().toInt()
             buildTypes {
                 getByName("release") {
                     isMinifyEnabled = true
@@ -37,7 +37,6 @@ internal fun Project.configureKotlinAndroid(
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_17
             targetCompatibility = JavaVersion.VERSION_17
-            isCoreLibraryDesugaringEnabled = true
         }
 
         kotlinOptions {

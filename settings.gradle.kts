@@ -15,4 +15,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "TripicaAndroidTest"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+include(":designsystem")

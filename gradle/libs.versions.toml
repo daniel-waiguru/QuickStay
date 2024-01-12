@@ -135,8 +135,6 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless"}
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 # Plugins defined by this project
-weatherapp-android-application-jacoco = { id = "weatherapp.android.application.jacoco", version = "unspecified" }
-weatherapp-android-library-jacoco = { id = "weatherapp.android.library.jacoco", version = "unspecified" }
 
 [bundles]
 network = ["retrofit-core", "retrofit-moshi-converter", "okhttp-logging"]
