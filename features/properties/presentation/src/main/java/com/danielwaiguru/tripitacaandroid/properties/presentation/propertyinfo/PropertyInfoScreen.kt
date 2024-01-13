@@ -37,7 +37,6 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.VerticalDivider
@@ -71,6 +70,7 @@ import com.danielwaiguru.tripitacaandroid.properties.presentation.components.Tri
 import com.danielwaiguru.tripitacaandroid.properties.presentation.components.TripitacaGoogleMap
 import com.danielwaiguru.tripitacaandroid.shared.state.ViewState
 import com.google.android.gms.maps.model.LatLng
+import com.danielwaiguru.tripitacaandroid.shared.R as SharedRes
 
 
 @Composable
@@ -95,88 +95,81 @@ fun PropertyInfoScreen(
     state: ViewState<Property>,
     modifier: Modifier = Modifier
 ) {
-    Scaffold(
+    Column(
         modifier = modifier
     ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(it)
-
-        ) {
-            when (state) {
-                is ViewState.Error -> {
-                    Box(
+        when (state) {
+            is ViewState.Error -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                ) {
+                    Text(
+                        text = state.message ?: stringResource(
+                            id = R.string.something_went_wrong
+                        ),
                         modifier = Modifier
-                            .fillMaxSize()
-                    ) {
-                        Text(
-                            text = state.message ?: stringResource(
-                                id = R.string.something_went_wrong
-                            ),
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .align(Alignment.Center),
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-
-                ViewState.Loading -> {}
-                is ViewState.Success -> {
-                    Column(
-                        verticalArrangement = Arrangement.spacedBy(-(15).dp)
-                    ) {
-                        LazyColumn(
-                            Modifier
-                                .weight(1f),
-                            verticalArrangement = Arrangement.spacedBy(-(15).dp)
-                        ) {
-                            item {
-                                PropertyImagesSlider(
-                                    property = state.data,
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .wrapContentHeight()
-                                        .height(300.dp),
-                                    onAddToFavourite = onAddToFavourite,
-                                    onNavigateBack = onNavigateBack
-                                )
-                            }
-                            item {
-                                PropertyInfoSection(
-                                    property = state.data,
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .wrapContentHeight()
-                                        .background(
-                                            MaterialTheme.colorScheme.background,
-                                            shape = RoundedCornerShape(
-                                                topStart = 20.dp,
-                                                topEnd = 20.dp
-                                            )
-                                        )
-                                        .padding(Dimensions.ScreenPadding)
-                                )
-                            }
-                        }
-                        TripitacaPrimaryButton(
-                            text = stringResource(id = R.string.book_now),
-                            onClick = {
-
-                            },
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(
-                                    horizontal = Dimensions.ScreenPadding,
-                                    vertical = Dimensions.ScreenPadding
-                                )
-                        )
-                    }
+                            .fillMaxWidth()
+                            .align(Alignment.Center),
+                        textAlign = TextAlign.Center
+                    )
                 }
             }
 
+            ViewState.Loading -> {}
+            is ViewState.Success -> {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(-(15).dp)
+                ) {
+                    LazyColumn(
+                        Modifier
+                            .weight(1f),
+                        verticalArrangement = Arrangement.spacedBy(-(15).dp)
+                    ) {
+                        item {
+                            PropertyImagesSlider(
+                                property = state.data,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .wrapContentHeight()
+                                    .height(300.dp),
+                                onAddToFavourite = onAddToFavourite,
+                                onNavigateBack = onNavigateBack
+                            )
+                        }
+                        item {
+                            PropertyInfoSection(
+                                property = state.data,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .wrapContentHeight()
+                                    .background(
+                                        MaterialTheme.colorScheme.background,
+                                        shape = RoundedCornerShape(
+                                            topStart = 20.dp,
+                                            topEnd = 20.dp
+                                        )
+                                    )
+                                    .padding(Dimensions.ScreenPadding)
+                            )
+                        }
+                    }
+                    TripitacaPrimaryButton(
+                        text = stringResource(id = R.string.book_now),
+                        onClick = {
+
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                horizontal = Dimensions.ScreenPadding,
+                                vertical = Dimensions.ScreenPadding
+                            )
+                    )
+                }
+            }
         }
+
     }
 }
 
@@ -337,7 +330,12 @@ fun PropertyInfoSection(
             Text(
                 text = buildAnnotatedString {
                     withStyle(SpanStyle(fontWeight = FontWeight.ExtraBold)) {
-                        append("${property.price}")
+                        append(
+                            stringResource(
+                                id = SharedRes.string.price_placeholder,
+                                property.price
+                            )
+                        )
                     }
                     append(" / night")
                 },

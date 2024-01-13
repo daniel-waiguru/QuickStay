@@ -3,6 +3,7 @@ package com.danielwaiguru.tripitacaandroid.properties.data.mappers
 import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.GeolocationDto
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.PropertyDto
+import com.danielwaiguru.tripitacaandroid.shared.dateutils.DateUtils
 
 fun PropertyDto.toProperty(): Property = Property(
     id = id,
@@ -22,7 +23,7 @@ fun PropertyDto.toProperty(): Property = Property(
     amenities = amenities?.filterNot { it.contains("translation missing") } ?: emptyList(),
     cancellationPolicy = cancellationPolicy,
     description = description,
-    hostSince = hostSince,
+    hostSince = DateUtils.parseJsonDate(hostSince),
     bookedDates = bookedDates,
     beds = beds,
     bathrooms = bathrooms,

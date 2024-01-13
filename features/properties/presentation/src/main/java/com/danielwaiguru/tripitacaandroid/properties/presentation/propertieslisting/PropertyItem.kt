@@ -24,6 +24,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -33,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacAsyncImage
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRatingBar
 import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
+import com.danielwaiguru.tripitacaandroid.shared.R as SharedRes
 
 
 @Composable
@@ -137,7 +139,12 @@ internal fun PropertyItem(
                 Text(
                     text = buildAnnotatedString {
                         withStyle(SpanStyle(fontWeight = FontWeight.ExtraBold)) {
-                            append("${property.price}")
+                            append(
+                                stringResource(
+                                    id = SharedRes.string.price_placeholder,
+                                    property.price
+                                )
+                            )
                         }
                         append("/night")
                     },
