@@ -10,6 +10,8 @@ import androidx.navigation.compose.rememberNavController
 import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTestTheme
 import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.SignInScreenDestination
 import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.signInScreen
+import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.bookingScreen
+import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.navigateToBookingScreen
 import com.danielwaiguru.tripitacaandroid.properties.presentation.navigation.navigateToPropertiesGraph
 import com.danielwaiguru.tripitacaandroid.properties.presentation.navigation.propertiesFeatureGraph
 
@@ -30,7 +32,13 @@ fun TripitacaRootNavigation() {
                         navController.navigateToPropertiesGraph()
                     }
                 )
-                propertiesFeatureGraph(navController)
+                propertiesFeatureGraph(
+                    navController = navController,
+                    onClickBookNow = {
+                        navController.navigateToBookingScreen(it)
+                    }
+                )
+                bookingScreen(navController)
             }
         }
     }

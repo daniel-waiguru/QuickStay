@@ -3,9 +3,9 @@ package com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.data.repositories.PropertiesRepository
 import com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.navigation.PropertyArgs
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import com.danielwaiguru.tripitacaandroid.shared.state.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

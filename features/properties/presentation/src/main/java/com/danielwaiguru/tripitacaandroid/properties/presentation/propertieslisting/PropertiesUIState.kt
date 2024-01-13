@@ -1,6 +1,6 @@
 package com.danielwaiguru.tripitacaandroid.properties.presentation.propertieslisting
 
-import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 
 data class PropertiesUIState(
     val properties: List<Property> = emptyList(),

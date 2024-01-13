@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="check_in">Check in</string>
+    <string name="check_out">Check out</string>
+    <string name="reduce_count">Reduce count</string>
+    <string name="who_s_coming">Who\'s coming?</string>
+    <string name="adults">Adults</string>
+    <string name="ages_13_or_above">Ages 13 or above</string>
+    <string name="children">Children</string>
+    <string name="ages_2_12">Ages 2–12</string>
+    <string name="infants">Infants</string>
+    <string name="under_2">Under 2</string>
+    <string name="nav_icon_content_desc">Navigate back</string>
+    <string name="continue_text">Continue</string>
+</resources>

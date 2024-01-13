@@ -47,6 +47,7 @@ dependencies {
     implementation(projects.shared)
     implementation(projects.features.auth.presentation)
     implementation(projects.features.properties.presentation)
+    implementation(projects.features.booking.presentation)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)

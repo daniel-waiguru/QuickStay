@@ -1,4 +1,4 @@
-package com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.navigation
+package com.danielwaiguru.tripitacaandroid.booking.presentation.navigation
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.NavController
@@ -7,37 +7,36 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.PropertyInfoRoute
+import com.danielwaiguru.tripitacaandroid.booking.presentation.BookingScreenRoute
 import com.danielwaiguru.tripitacaandroid.shared.navigation.AppNavigationDestination
 
-object PropertyInfoScreenDestination: AppNavigationDestination {
-    override val route: String = "com.danielwaiguru.tripitacaandroid.properties.PropertyInfoScreen"
+object BookingScreenDestination: AppNavigationDestination {
+    override val route: String = "com.danielwaiguru.tripitacaandroid.booking.BookingScreen"
     override val destination: String =
-        "com.danielwaiguru.tripitacaandroid.properties.PropertyInfoScreenDestination"
+        "com.danielwaiguru.tripitacaandroid.booking.BookingScreenDestination"
 }
+
 private const val propertyIdArg = "propertyId"
 internal class PropertyArgs(val propertyId: String) {
     constructor(savedStateHandle: SavedStateHandle):
             this(checkNotNull(savedStateHandle[propertyIdArg]) as String)
 }
-fun NavController.navigateToPropertyInfo(propertyId: String) {
-    navigate("${PropertyInfoScreenDestination.route}/$propertyId")
+
+fun NavController.navigateToBookingScreen(propertyId: String) {
+    navigate("${BookingScreenDestination.route}/$propertyId")
 }
-fun NavGraphBuilder.propertyInfoScreen(
-    navController: NavHostController,
-    onClickBookNow: (id: String) -> Unit
-) {
+
+fun NavGraphBuilder.bookingScreen(navController: NavHostController) {
     composable(
-        route = "${PropertyInfoScreenDestination.route}/{$propertyIdArg}",
+        route = "${BookingScreenDestination.route}/{$propertyIdArg}",
         arguments = listOf(
             navArgument(propertyIdArg) { type = NavType.StringType}
         )
     ) {
-        PropertyInfoRoute(
+        BookingScreenRoute(
             onNavigateBack = {
                 navController.popBackStack()
-            },
-            onClickBookNow = onClickBookNow
+            }
         )
     }
 }

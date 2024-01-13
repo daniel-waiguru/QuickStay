@@ -64,10 +64,10 @@ import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaPrimary
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRatingBar
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaTopAppBar
 import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
-import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.presentation.R
 import com.danielwaiguru.tripitacaandroid.properties.presentation.components.TripitacaCalendar
 import com.danielwaiguru.tripitacaandroid.properties.presentation.components.TripitacaGoogleMap
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import com.danielwaiguru.tripitacaandroid.shared.state.ViewState
 import com.google.android.gms.maps.model.LatLng
 import com.danielwaiguru.tripitacaandroid.shared.R as SharedRes
@@ -76,6 +76,7 @@ import com.danielwaiguru.tripitacaandroid.shared.R as SharedRes
 @Composable
 fun PropertyInfoRoute(
     onNavigateBack: () -> Unit,
+    onClickBookNow: (id: String) -> Unit,
     viewModel: PropertyInfoViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.viewState.collectAsStateWithLifecycle()
@@ -84,7 +85,8 @@ fun PropertyInfoRoute(
         modifier = Modifier
             .fillMaxSize(),
         onNavigateBack = onNavigateBack,
-        onAddToFavourite = viewModel::onAddToFavourite
+        onAddToFavourite = viewModel::onAddToFavourite,
+        onClickBookNow = onClickBookNow
     )
 }
 
@@ -92,6 +94,7 @@ fun PropertyInfoRoute(
 fun PropertyInfoScreen(
     onNavigateBack: () -> Unit,
     onAddToFavourite: () -> Unit,
+    onClickBookNow: (id: String) -> Unit,
     state: ViewState<Property>,
     modifier: Modifier = Modifier
 ) {
@@ -157,7 +160,7 @@ fun PropertyInfoScreen(
                     TripitacaPrimaryButton(
                         text = stringResource(id = R.string.book_now),
                         onClick = {
-
+                            onClickBookNow(state.data.id)
                         },
                         modifier = Modifier
                             .fillMaxWidth()

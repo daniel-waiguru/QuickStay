@@ -26,8 +26,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.danielwaiguru.tripicaandroid.designsystem.components.ShimmerProgressIndicator
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaTopAppBar
 import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
-import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.presentation.R
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 
 @Composable
 fun PropertiesRoute(

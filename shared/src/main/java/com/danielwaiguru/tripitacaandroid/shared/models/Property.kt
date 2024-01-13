@@ -1,4 +1,4 @@
-package com.danielwaiguru.tripitacaandroid.properties.data.models
+package com.danielwaiguru.tripitacaandroid.shared.models
 
 data class Property(
     val id: String,

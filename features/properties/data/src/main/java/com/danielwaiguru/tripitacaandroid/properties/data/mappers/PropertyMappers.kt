@@ -1,6 +1,6 @@
 package com.danielwaiguru.tripitacaandroid.properties.data.mappers
 
-import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.GeolocationDto
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.PropertyDto
 import com.danielwaiguru.tripitacaandroid.shared.dateutils.DateUtils

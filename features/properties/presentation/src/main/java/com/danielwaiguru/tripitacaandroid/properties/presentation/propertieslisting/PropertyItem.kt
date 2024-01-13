@@ -33,7 +33,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacAsyncImage
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRatingBar
-import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import com.danielwaiguru.tripitacaandroid.shared.R as SharedRes
 
 

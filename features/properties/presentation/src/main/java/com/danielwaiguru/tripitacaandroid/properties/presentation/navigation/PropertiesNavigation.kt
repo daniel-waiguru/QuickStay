@@ -14,12 +14,15 @@ fun NavController.navigateToPropertiesGraph(navOptions: NavOptions? = null) = na
     PROPERTIES_GRAPH_ROUTE_PATTERN,
     navOptions
 )
-fun NavGraphBuilder.propertiesFeatureGraph(navController: NavHostController) {
+fun NavGraphBuilder.propertiesFeatureGraph(
+    navController: NavHostController,
+    onClickBookNow: (id: String) -> Unit
+) {
     navigation(
         route = PROPERTIES_GRAPH_ROUTE_PATTERN,
         startDestination = PropertiesScreenDestination.destination
     ) {
         propertiesScreen(navController)
-        propertyInfoScreen(navController)
+        propertyInfoScreen(navController, onClickBookNow)
     }
 }

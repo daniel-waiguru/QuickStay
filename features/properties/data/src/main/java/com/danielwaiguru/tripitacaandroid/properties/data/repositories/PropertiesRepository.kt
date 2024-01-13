@@ -2,7 +2,7 @@ package com.danielwaiguru.tripitacaandroid.properties.data.repositories
 
 import android.content.Context
 import com.danielwaiguru.tripitacaandroid.properties.data.mappers.toProperty
-import com.danielwaiguru.tripitacaandroid.properties.data.models.Property
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.PropertyDto
 import com.danielwaiguru.tripitacaandroid.properties.data.models.response.PropertiesResponse
 import com.danielwaiguru.tripitacaandroid.properties.data.utils.parseJson
