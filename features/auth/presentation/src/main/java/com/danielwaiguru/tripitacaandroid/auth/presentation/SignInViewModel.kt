@@ -24,8 +24,8 @@ class SignInViewModel @Inject constructor(
     private val userDataRepository: UserDataRepository,
     @Dispatcher(DispatcherProvider.IO) private val ioDispatcher: CoroutineDispatcher
 ): ViewModel() {
-    private val _viewState: MutableStateFlow<ViewState?> = MutableStateFlow(null)
-    val viewState: StateFlow<ViewState?> = _viewState.asStateFlow()
+    private val _viewState: MutableStateFlow<ViewState<String>?> = MutableStateFlow(null)
+    val viewState: StateFlow<ViewState<String>?> = _viewState.asStateFlow()
 
     fun onUserSignIn(data: Intent?) = viewModelScope.launch(ioDispatcher) {
         _viewState.emit(ViewState.Loading)

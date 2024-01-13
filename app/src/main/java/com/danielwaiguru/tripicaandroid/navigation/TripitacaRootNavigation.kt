@@ -10,6 +10,8 @@ import androidx.navigation.compose.rememberNavController
 import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTestTheme
 import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.SignInScreenDestination
 import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.signInScreen
+import com.danielwaiguru.tripitacaandroid.properties.presentation.navigation.navigateToPropertiesGraph
+import com.danielwaiguru.tripitacaandroid.properties.presentation.navigation.propertiesFeatureGraph
 
 @Composable
 fun TripitacaRootNavigation() {
@@ -23,7 +25,12 @@ fun TripitacaRootNavigation() {
                 navController = navController,
                 startDestination = SignInScreenDestination.route
             ) {
-                signInScreen(navController)
+                signInScreen(
+                    onNavigateToHome = {
+                        navController.navigateToPropertiesGraph()
+                    }
+                )
+                propertiesFeatureGraph(navController)
             }
         }
     }

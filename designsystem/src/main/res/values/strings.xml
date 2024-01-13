@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_icon_content_desc">Navigate back</string>
+    <string name="offsetx">OffsetX</string>
+    <string name="infinite_transition">Infinite-Transition</string>
+</resources>

@@ -53,7 +53,7 @@ fun SignInScreen(
     modifier: Modifier = Modifier,
     onSignInResult: (Intent?) -> Unit,
     onNavigateToHome: () -> Unit,
-    state: ViewState?
+    state: ViewState<String>?
 ) {
     val webClient = stringResource(id = R.string.web_client_id)
     val context = LocalContext.current
@@ -106,7 +106,8 @@ fun SignInScreen(
                 .fillMaxWidth(),
             text = stringResource(R.string.sign_in_with_google),
             onClick = {
-                getGoogleSignInLauncher.launch(googleSignInClient)
+                      onNavigateToHome()
+                //getGoogleSignInLauncher.launch(googleSignInClient)
             },
             loading = state is ViewState.Loading
         )

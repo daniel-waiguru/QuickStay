@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hey">Hey</string>
+    <string name="property">Property %1$s</string>
+    <string name="amenities_available">Top Amenities</string>
+    <string name="about">About</string>
+    <string name="cancelation_policy">Cancelation Policy</string>
+    <string name="hosted_by">Hosted by %s</string>
+    <string name="joined_in">Joined in %1$s</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="where_you_will_be">Where you\'ll be</string>
+    <string name="availability">Availability</string>
+    <string name="book_now">Book Now</string>
+    <string name="nav_icon_content_desc">Navigate back</string>
+    <string name="add_to_favourite">Add to favourite</string>
+    <plurals name="guests_placeholder">
+        <item quantity="one">%1$s\nGuest</item>
+        <item quantity="other">%1$s\nGuests</item>
+    </plurals>
+    <plurals name="beds_placeholder">
+        <item quantity="one">%1$s\nBed</item>
+        <item quantity="other">%1$s\nBeds</item>
+    </plurals>
+    <plurals name="baths_placeholder">
+        <item quantity="one">%1$s\nBath</item>
+        <item quantity="other">%1$s\nBaths</item>
+    </plurals>
+</resources>

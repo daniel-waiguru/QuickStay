@@ -35,6 +35,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = "17"
@@ -49,14 +50,16 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
+    implementation(libs.timber)
+    coreLibraryDesugaring(libs.android.desugarJdkLibs)
     implementation(platform(libs.compose.bom))
-    implementation(libs.ui)
-    implementation(libs.ui.graphics)
-    implementation(libs.ui.tooling.preview)
-    implementation(libs.material3)
+//    implementation(libs.ui)
+//    implementation(libs.ui.graphics)
+//    implementation(libs.ui.tooling.preview)
+//    implementation(libs.material3)
+//    androidTestImplementation(platform(libs.compose.bom))
+//    androidTestImplementation(libs.ui.test.junit4)
+//    debugImplementation(libs.ui.tooling)
+//    debugImplementation(libs.ui.test.manifest)
     androidTestImplementation(libs.espresso.core)
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.ui.test.junit4)
-    debugImplementation(libs.ui.tooling)
-    debugImplementation(libs.ui.test.manifest)
 }

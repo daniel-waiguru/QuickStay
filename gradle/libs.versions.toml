@@ -36,6 +36,7 @@ googleFont = "1.5.4"
 androidxNavigation = "2.7.6"
 shimmer = "0.5.0"
 googleAccompanist = "0.25.0"
+mapsCompose = "4.3.0"
 ktlint = "11.5.1"
 spotless = "6.21.0"
 room = "2.6.1"
@@ -49,6 +50,9 @@ googleAuth = "20.7.0"
 protobuf = "3.25.0"
 protobufPlugin = "0.9.4"
 datastore = "1.0.0"
+gson = "2.10.1"
+mapsplatformSecrets = "2.0.1"
+material3Android = "1.2.0-beta02"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -63,6 +67,7 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigation" }
 androidx-lifecycle-viewModel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
@@ -88,6 +93,7 @@ androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navig
 retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
 retrofit-moshi-converter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit"}
 okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp"}
+gson = { module = "com.google.code.gson:gson", version.ref = "gson"}
 
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
@@ -134,6 +140,8 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "playServicesLocation" }
+maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose"}
+
 
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 
@@ -148,6 +156,7 @@ ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint"}
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless"}
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
+com-google-android-libraries-mapsplatform-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "mapsplatformSecrets" }
 
 # Plugins defined by this project
 
@@ -161,7 +170,8 @@ compose = [
     "ui-tooling-preview",
     "androidx-compose-material-icons-extended",
     "androidx-lifecycle-runtime-compose",
-    "material3",
+    #"material3",
+    "androidx-material3-android",
     "androidx-lifecycle-viewModel-compose",
     "androidx-hilt-navigation-compose",
     "androidx-navigation-compose"

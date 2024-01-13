@@ -1,44 +1,21 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.com.android.library)
-    alias(libs.plugins.org.jetbrains.kotlin.android)
+    id("tripitacaandroid.android.feature")
+    id("tripitacaandroid.android.library.compose")
+    alias(libs.plugins.com.google.android.libraries.mapsplatform.secrets.gradle.plugin)
 }
 
 android {
     namespace = "com.danielwaiguru.tripitacaandroid.properties.presentation"
-    compileSdk = 34
-
-    defaultConfig {
-        minSdk = 24
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    buildFeatures {
+        buildConfig = true
     }
 }
 
 dependencies {
-
-    implementation(libs.core.ktx)
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit4)
-    androidTestImplementation(libs.junit4.ext)
-    androidTestImplementation(libs.espresso.core)
+    implementation(projects.shared)
+    implementation(projects.features.properties.data)
+    implementation(libs.maps.compose)
+    implementation(libs.play.services.location)
+    implementation(libs.androidx.material3.android)
 }

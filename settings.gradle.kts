@@ -4,6 +4,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 dependencyResolutionManagement {
@@ -11,6 +12,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
@@ -22,3 +24,4 @@ include(":features:auth:presentation")
 include(":features:properties:presentation")
 include(":shared")
 include(":features:auth:data")
+include(":features:properties:data")
