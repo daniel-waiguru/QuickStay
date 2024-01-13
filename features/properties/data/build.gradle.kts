@@ -10,6 +10,9 @@ android {
         getByName("release") {
             isMinifyEnabled = false
         }
+        getByName("debug") {
+            isMinifyEnabled = false
+        }
     }
 }
 dependencies {
