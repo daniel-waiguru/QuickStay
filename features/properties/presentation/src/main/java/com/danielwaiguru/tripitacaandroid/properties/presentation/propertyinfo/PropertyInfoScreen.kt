@@ -58,7 +58,6 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.danielwaiguru.tripicaandroid.designsystem.components.IconText
-import com.danielwaiguru.tripicaandroid.designsystem.components.ProgressIndicator
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacAsyncImage
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaChip
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaPrimaryButton
@@ -121,15 +120,15 @@ fun PropertyInfoScreen(
             }
 
             ViewState.Loading -> {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                ) {
-                    ProgressIndicator(
-                        modifier = Modifier
-                            .align(Alignment.Center)
-                    )
-                }
+//                Box(
+//                    modifier = Modifier
+//                        .fillMaxSize()
+//                ) {
+//                    ProgressIndicator(
+//                        modifier = Modifier
+//                            .align(Alignment.Center)
+//                    )
+//                }
             }
             is ViewState.Success -> {
                 Column(

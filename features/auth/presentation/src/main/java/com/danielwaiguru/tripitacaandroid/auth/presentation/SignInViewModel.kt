@@ -38,7 +38,7 @@ class SignInViewModel @Inject constructor(
                 id = account.id,
                 displayName = username,
                 email = account.email,
-                photoUrl = account.photoUrl
+                photoUrl = account.photoUrl?.toString()
             )
             val result = userDataRepository.saveUser(user)
             if (result.isSuccess) {

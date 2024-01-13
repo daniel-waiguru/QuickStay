@@ -1,6 +1,5 @@
 package com.danielwaiguru.tripitacaandroid.properties.presentation.propertieslisting
 
-import android.net.Uri
 import com.danielwaiguru.tripitacaandroid.shared.models.Property
 
 data class PropertiesUIState(
@@ -9,7 +8,7 @@ data class PropertiesUIState(
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
     val username: String = "Anonymous",
-    val userProfileUri: Uri? = null,
+    val userProfileUri: String? = null,
     val selectedAmenityFilter: String? = null,
     val amenities: List<String> = listOf(
         "TV",

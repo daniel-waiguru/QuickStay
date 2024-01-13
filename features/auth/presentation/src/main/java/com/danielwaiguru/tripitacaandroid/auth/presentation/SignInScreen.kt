@@ -71,7 +71,7 @@ fun SignInScreen(
         contract = GetSignInDataContract(),
         onResult = onSignInResult
     )
-    when(state) {
+    when (state) {
         is ViewState.Error -> {
             val error = state.message ?: state.messageRes?.let { stringResource(id = it) }
             if (error.isNullOrBlank().not()) {
@@ -82,6 +82,7 @@ fun SignInScreen(
                 ).show()
             }
         }
+
         is ViewState.Success<*> -> onNavigateToHome()
         else -> Unit
     }
@@ -94,20 +95,19 @@ fun SignInScreen(
             painter = painterResource(id = R.drawable.tripitaca),
             contentDescription = stringResource(R.string.tripitaca_logo),
             modifier = Modifier
-                .padding(horizontal = 30.dp)
+                .padding(horizontal = 40.dp)
         )
         Text(
             text = stringResource(R.string.welcome_back),
             modifier = Modifier
-                .padding(vertical = 10.dp)
+                .padding(top = 10.dp, bottom = 30.dp)
         )
         GoogleSignInButton(
             modifier = Modifier
                 .fillMaxWidth(),
             text = stringResource(R.string.sign_in_with_google),
             onClick = {
-                      onNavigateToHome()
-                //getGoogleSignInLauncher.launch(googleSignInClient)
+                getGoogleSignInLauncher.launch(googleSignInClient)
             },
             loading = state is ViewState.Loading
         )

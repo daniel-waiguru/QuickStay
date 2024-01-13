@@ -38,7 +38,7 @@ fun GoogleSignInButton(
         shape = MaterialTheme.shapes.medium,
         border = BorderStroke(
             width = 1.dp,
-            color = MaterialTheme.colorScheme.secondary
+            color = MaterialTheme.colorScheme.outlineVariant
         ),
         modifier = modifier,
         onClick = onClick
