@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hey">Hey</string>
+    <string name="hey">Hey\n%s</string>
     <string name="property">Property %1$s</string>
     <string name="amenities_available">Top Amenities</string>
     <string name="about">About</string>
@@ -13,6 +13,7 @@
     <string name="book_now">Book Now</string>
     <string name="nav_icon_content_desc">Navigate back</string>
     <string name="add_to_favourite">Add to favourite</string>
+    <string name="clear_filters">Clear Filters</string>
     <plurals name="guests_placeholder">
         <item quantity="one">%1$s\nGuest</item>
         <item quantity="other">%1$s\nGuests</item>
