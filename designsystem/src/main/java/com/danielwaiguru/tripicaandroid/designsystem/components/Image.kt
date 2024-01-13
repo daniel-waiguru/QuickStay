@@ -14,7 +14,7 @@ import com.facebook.shimmer.ShimmerDrawable
 
 @Composable
 fun TripitacAsyncImage(
-    url: String,
+    url: Any,
     contentDescription: String,
     modifier: Modifier = Modifier
 ) {

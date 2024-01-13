@@ -7,6 +7,7 @@ import com.danielwaiguru.tripitacaandroid.auth.data.repositories.UserDataReposit
 import com.danielwaiguru.tripitacaandroid.auth.presentation.utils.GoogleSignInWrapper
 import com.danielwaiguru.tripitacaandroid.shared.dispatchers.Dispatcher
 import com.danielwaiguru.tripitacaandroid.shared.dispatchers.DispatcherProvider
+import com.danielwaiguru.tripitacaandroid.shared.models.User
 import com.danielwaiguru.tripitacaandroid.shared.state.ViewState
 import com.google.android.gms.common.api.ApiException
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -33,7 +34,13 @@ class SignInViewModel @Inject constructor(
             val task = googleSignInWrapper.getSignedInAccountFromIntent(data)
             val account = task.getResult(ApiException::class.java)
             val username = account.displayName ?: account.familyName ?: account.email ?: ""
-            val result = userDataRepository.saveUser(username)
+            val user = User(
+                id = account.id,
+                displayName = username,
+                email = account.email,
+                photoUrl = account.photoUrl
+            )
+            val result = userDataRepository.saveUser(user)
             if (result.isSuccess) {
                 _viewState.emit(ViewState.Success(username))
             } else {

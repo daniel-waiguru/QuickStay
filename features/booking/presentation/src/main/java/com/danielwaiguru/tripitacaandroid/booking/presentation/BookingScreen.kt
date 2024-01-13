@@ -137,7 +137,7 @@ fun BookingScreen(
                         ), MaterialTheme.shapes.medium
                     )
                     .padding(10.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 if (state.property != null) {
                     TripitacaDateRangePicker(
@@ -262,7 +262,8 @@ private fun DateInput(
     ) {
         Text(
             text = label,
-            fontWeight = FontWeight.SemiBold
+            fontWeight = FontWeight.SemiBold,
+            modifier = Modifier.padding(bottom = 8.dp)
         )
         TripitacaRoundedInputField(
             value = value,

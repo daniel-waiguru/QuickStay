@@ -90,7 +90,7 @@ internal fun PropertyItem(
                 Column(
                     modifier = Modifier
                         .align(Alignment.TopStart)
-                        .padding(start = 8.dp, top = 8.dp)
+                        .padding(start = 10.dp, top = 10.dp)
                 ) {
                     Text(
                         text = property.propertyType,

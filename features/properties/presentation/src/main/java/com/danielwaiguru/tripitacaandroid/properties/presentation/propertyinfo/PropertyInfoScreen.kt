@@ -58,6 +58,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.danielwaiguru.tripicaandroid.designsystem.components.IconText
+import com.danielwaiguru.tripicaandroid.designsystem.components.ProgressIndicator
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacAsyncImage
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaChip
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaPrimaryButton
@@ -119,7 +120,17 @@ fun PropertyInfoScreen(
                 }
             }
 
-            ViewState.Loading -> {}
+            ViewState.Loading -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                ) {
+                    ProgressIndicator(
+                        modifier = Modifier
+                            .align(Alignment.Center)
+                    )
+                }
+            }
             is ViewState.Success -> {
                 Column(
                     verticalArrangement = Arrangement.spacedBy(-(15).dp)
@@ -280,7 +291,7 @@ private fun PropertyImagesSlider(
                         tint = if (property.isFavourite) {
                             MaterialTheme.colorScheme.primary
                         } else {
-                            MaterialTheme.colorScheme.surface
+                            Color.Unspecified
                         }
                     )
                 }
@@ -477,7 +488,7 @@ fun PropertyInfoSection(
                 )
                 Text(
                     text = stringResource(R.string.joined_in, property.hostSince),
-                    fontWeight = FontWeight.Thin
+                    fontSize = 12.sp
                 )
             }
             TripitacAsyncImage(
