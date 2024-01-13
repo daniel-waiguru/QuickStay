@@ -1,8 +1,9 @@
 package com.danielwaiguru.tripitacaandroid.properties.data.models.dtos
 
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
-
+@Keep
 data class PropertyDto(
     @SerializedName("access")
     val access: String,

@@ -6,6 +6,11 @@ plugins {
 
 android {
     namespace = "com.danielwaiguru.tripitacaandroid.properties.data"
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = false
+        }
+    }
 }
 dependencies {
     implementation(libs.gson)
