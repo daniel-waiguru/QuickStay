@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_failed">Login failed</string>
+    <string name="tripitaca_logo">Tripitaca logo</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="google_logo">Google logo</string>
+    <string name="sign_in_with_google">Sign In with Google</string>
+    <string name="web_client_id">244673986272-gs6o9vft6l95u3eo7o0kmnh8mntvmmvu.apps.googleusercontent.com</string>
+</resources>
