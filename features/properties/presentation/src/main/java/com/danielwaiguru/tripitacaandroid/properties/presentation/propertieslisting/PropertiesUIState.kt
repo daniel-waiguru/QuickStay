@@ -1,7 +1,8 @@
 package com.danielwaiguru.tripitacaandroid.properties.presentation.propertieslisting
 
+import androidx.compose.runtime.Stable
 import com.danielwaiguru.tripitacaandroid.shared.models.Property
-
+@Stable
 data class PropertiesUIState(
     val properties: List<Property> = emptyList(),
     val filteredProperties: List<Property> = emptyList(),
