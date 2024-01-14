@@ -4,6 +4,7 @@ To run the project in your local environment, you need
 * Go to the android studio and create a new project using the 'Get from version control' option.
 * Paste this link `https://github.com/daniel-waiguru/TripitacaAndroid.git`
 * Add your Google maps API Key to `local.properties` file or copy paste the one provided below
+
   ```
   MAPS_API_KEY=AIzaSyCGk4OKjMi7O5Rlg7zU9q_xY5e-ROzxIxI
   ```
@@ -45,4 +46,8 @@ This repo uses Android Studio built-in linter to analyze the codebase and identi
 ```
 
 ## App Screenshots
-<img src="/docs/permission_screen.png" width="260"/>&emsp;<img src="/docs/loading_screen.png" width="260"/>&emsp;<img src="/docs/weather_screen.png" width="260"/>
+| Sign In               | Properties            | Properties Filtered  | Property Details |
+| -------------         |:--------------------: | -------------------: | -----------------:|
+| <img src="/docs/sign_in.png" width="260"/>     | <img src="/docs/properties.png" width="260"/>      | <img src="/docs/properties_filtered.png" width="260"/> | <img src="/docs/property_info1.png" width="260"/> <img src="/docs/property_info2.png" width="260"/>          |
+
+## App Recording 🎥
