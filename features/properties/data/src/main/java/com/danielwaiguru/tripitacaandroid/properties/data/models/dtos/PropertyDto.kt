@@ -74,7 +74,7 @@ data class PropertyDto(
     @SerializedName("host_verifications")
     val hostVerifications: List<String>,
     @SerializedName("house_rules")
-    val houseRules: String,
+    val houseRules: String?,
     @SerializedName("id")
     val id: String,
     @SerializedName("last_review")

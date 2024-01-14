@@ -24,7 +24,7 @@ data class Property(
     val bathrooms: Int,
     val guestsIncluded: Int,
     val hostAbout: String?,
-    val houseRules: String,
+    val houseRules: String?,
     val isFavourite: Boolean = false
 ) {
     data class GeoLocation(

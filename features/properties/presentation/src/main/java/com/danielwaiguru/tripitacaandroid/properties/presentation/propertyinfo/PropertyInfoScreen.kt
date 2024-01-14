@@ -474,15 +474,17 @@ fun PropertyInfoSection(
             modifier = Modifier
                 .padding(vertical = 5.dp)
         )
-        Text(
-            text = stringResource(R.string.house_rules),
-            fontWeight = FontWeight.SemiBold
-        )
-        Text(text = property.houseRules)
-        HorizontalDivider(
-            modifier = Modifier
-                .padding(vertical = 5.dp)
-        )
+        if (property.houseRules.isNullOrBlank().not()) {
+            Text(
+                text = stringResource(R.string.house_rules),
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(text = property.houseRules!!)
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(vertical = 5.dp)
+            )
+        }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
