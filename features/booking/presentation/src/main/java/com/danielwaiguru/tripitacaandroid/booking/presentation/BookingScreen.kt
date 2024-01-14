@@ -133,7 +133,7 @@ fun BookingScreen(
                 modifier = Modifier
                     .background(
                         MaterialTheme.colorScheme.outlineVariant.copy(
-                            alpha = 0.2f
+                            alpha = 0.1f
                         ), MaterialTheme.shapes.medium
                     )
                     .padding(10.dp),
@@ -174,7 +174,7 @@ fun BookingScreen(
                 modifier = Modifier
                     .background(
                         MaterialTheme.colorScheme.outlineVariant.copy(
-                            alpha = 0.2f
+                            alpha = 0.1f
                         ), MaterialTheme.shapes.medium
                     )
                     .padding(10.dp),

@@ -29,6 +29,8 @@
             <option value="$PROJECT_DIR$/features/auth" />
             <option value="$PROJECT_DIR$/features/auth/data" />
             <option value="$PROJECT_DIR$/features/auth/presentation" />
+            <option value="$PROJECT_DIR$/features/booking" />
+            <option value="$PROJECT_DIR$/features/booking/presentation" />
             <option value="$PROJECT_DIR$/features/properties" />
             <option value="$PROJECT_DIR$/features/properties/data" />
             <option value="$PROJECT_DIR$/features/properties/presentation" />

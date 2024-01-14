@@ -2,6 +2,7 @@
 plugins {
     id("tripitacaandroid.android.library")
     id("tripitacaandroid.android.hilt")
+    id("tripitacaandroid.android.library.compose")
 }
 
 android {
