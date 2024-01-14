@@ -1,4 +1,4 @@
-An android app that presents a list of listings using data from the provided JSON source, written 100% in Kotlin and Jetpack Compose using Android Jetpack Components.
+An Android app that presents a list of listings using data from the provided JSON source, written 100% in Kotlin and Jetpack Compose using Android Jetpack Components.
 ## Prerequisites
 To run the project in your local environment, you need
 * Go to the android studio and create a new project using the 'Get from version control' option.
@@ -9,6 +9,8 @@ To run the project in your local environment, you need
   MAPS_API_KEY=AIzaSyCGk4OKjMi7O5Rlg7zU9q_xY5e-ROzxIxI
   ```
 * Build the project and run it
+* Ready app apk can be downloaded from [here](https://drive.google.com/file/d/1e8jWiWkmpjdKaOZvpL0M-_NOVCOfwYn8/view?usp=sharing)
+* N/B: Please note and notify your team that the input fields for sign-in by email and password are for aesthetic purposes only, and the feature is not yet implemented as there is no login API.
 
 ## Tech-stack
 * Tech-stack
@@ -26,7 +28,7 @@ To run the project in your local environment, you need
     * [Timber](https://github.com/JakeWharton/timber) - a highly extensible Android logger.
 
 * Architecture
-    * MVVM - Model View ViewModel pattern with Feasture-based modularization.
+    * MVVM—Model View ViewModel pattern with Feature-based modularization.
 * Gradle
     * [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - An alternative syntax for writing Gradle build scripts using Koltin.
     * [Version Catalogs](https://developer.android.com/build/migrate-to-catalogs) - A scalable way of maintaining dependencies and plugins in a multi-module project.
@@ -39,7 +41,7 @@ To run the project in your local environment, you need
 All the dependencies (external libraries) are managed using version catalogs and defined in a single place `gradle/libs.versions.toml` file. This is a scalable approach to manage dependencies and use the same dependency version across all modules.
 
 ## Code Analysis
-This repo uses Android Studio built-in linter to analyze the codebase and identify potential code style violations, code quality issues, etc.
+This repo uses Android Studio's built-in linter to analyze the codebase and identify potential code style violations, code quality issues, etc.
 
 ```shell script
 ./gradlew lintDebug
@@ -52,5 +54,6 @@ This repo uses Android Studio built-in linter to analyze the codebase and identi
 
 ## App Recording 🎥
 
-https://github.com/daniel-waiguru/TripitacaAndroid/assets/52042764/68927301-94c2-4c70-b375-19e4bf6c88af
+https://github.com/daniel-waiguru/TripitacaAndroid/assets/52042764/537a0af0-c3e4-4288-b1e4-f836ab1d1803
+
 
