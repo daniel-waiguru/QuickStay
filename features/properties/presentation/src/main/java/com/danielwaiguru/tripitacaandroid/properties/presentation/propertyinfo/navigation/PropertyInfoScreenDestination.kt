@@ -1,5 +1,7 @@
 package com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.navigation
 
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.core.tween
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -9,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.PropertyInfoRoute
 import com.danielwaiguru.tripitacaandroid.shared.navigation.AppNavigationDestination
+import com.danielwaiguru.tripitacaandroid.shared.navigation.animationDuration
 
 object PropertyInfoScreenDestination: AppNavigationDestination {
     override val route: String = "com.danielwaiguru.tripitacaandroid.properties.PropertyInfoScreen"
@@ -31,7 +34,31 @@ fun NavGraphBuilder.propertyInfoScreen(
         route = "${PropertyInfoScreenDestination.route}/{$propertyIdArg}",
         arguments = listOf(
             navArgument(propertyIdArg) { type = NavType.StringType}
-        )
+        ),
+        enterTransition = {
+            slideIntoContainer(
+                towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                animationSpec = tween(animationDuration)
+            )
+        },
+        exitTransition = {
+            slideOutOfContainer(
+                towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
+                animationSpec = tween(animationDuration)
+            )
+        },
+        popEnterTransition = {
+            slideIntoContainer(
+                towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                animationSpec = tween(animationDuration)
+            )
+        },
+        popExitTransition = {
+            slideOutOfContainer(
+                towards = AnimatedContentTransitionScope.SlideDirection.Companion.Right,
+                animationSpec = tween(animationDuration)
+            )
+        }
     ) {
         PropertyInfoRoute(
             onNavigateBack = {
