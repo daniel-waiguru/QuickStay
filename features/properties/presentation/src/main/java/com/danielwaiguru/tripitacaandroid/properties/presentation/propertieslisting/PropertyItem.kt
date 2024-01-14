@@ -8,11 +8,13 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.FavoriteBorder
 import androidx.compose.material3.Card
@@ -31,6 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import com.danielwaiguru.tripicaandroid.designsystem.components.IconText
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacAsyncImage
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRatingBar
 import com.danielwaiguru.tripitacaandroid.shared.models.Property
@@ -64,7 +67,6 @@ internal fun PropertyItem(
                     contentDescription = property.name,
                     modifier = Modifier
                         .matchParentSize(),
-
                     )
                 IconButton(
                     onClick = {
@@ -120,8 +122,12 @@ internal fun PropertyItem(
                         fontWeight = FontWeight.Bold
                     )
                 }
-                Text(
-                    text = "${property.city}, ${property.country}"
+                IconText(
+                    icon = Icons.Outlined.LocationOn,
+                    text = "${property.city}, ${property.country}",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .offset(x = -(5).dp)
                 )
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -131,10 +137,10 @@ internal fun PropertyItem(
                         modifier = Modifier
                             .height(20.dp)
                             .wrapContentWidth(),
-                        rating = property.reviewsPerMonth ?: 0.0
+                        rating = property.reviewScoresRating
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "${property.reviewsPerMonth ?: 0.0}(${property.numberOfReviews})")
+                    Text(text = "${property.reviewScoresRating}(${property.numberOfReviews})")
                 }
                 Text(
                     text = buildAnnotatedString {

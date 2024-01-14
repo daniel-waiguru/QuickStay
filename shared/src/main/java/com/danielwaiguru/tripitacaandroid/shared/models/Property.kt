@@ -11,7 +11,7 @@ data class Property(
     val price: Int,
     val propertyType: String,
     val roomType: String,
-    val reviewScoresRating: Int,
+    val reviewScoresRating: Double,
     val numberOfReviews: Int?,
     val reviewsPerMonth: Double?,
     val city: String,
@@ -24,6 +24,7 @@ data class Property(
     val bathrooms: Int,
     val guestsIncluded: Int,
     val hostAbout: String?,
+    val houseRules: String?,
     val isFavourite: Boolean = false
 ) {
     data class GeoLocation(

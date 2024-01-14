@@ -31,12 +31,29 @@ jobs:
         env:
           LOCAL_PROPERTIES: ${{secrets.LOCAL_PROPERTIES}}
         run: echo $LOCAL_PROPERTIES > local.properties
-
-      - name: Run Unit Tests
-        run: ./gradlew lintDebug
-
-      - name: Run Unit Tests
-        run: ./gradlew test
-
       - name: Run debug Build
         run: ./gradlew assembleDebug
+  lint-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run linter for code analysis
+        run: ./gradlew lintDebug
+
+      - name: Upload lint report
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint_report.html
+          path: app/build/reports/lint-results-debug.html
+
+  unit-tests:
+    needs: [lint-check]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Unit Tests
+        run: ./gradlew test --stacktrace

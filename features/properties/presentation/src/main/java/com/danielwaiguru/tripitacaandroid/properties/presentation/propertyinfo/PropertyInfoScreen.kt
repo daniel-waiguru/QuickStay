@@ -46,6 +46,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -208,8 +209,8 @@ private fun PropertyImagesSlider(
                 url = property.photos[index],
                 contentDescription = stringResource(R.string.property, index),
                 modifier = Modifier
-                    .fillMaxSize()
-
+                    .fillMaxSize(),
+                contentScale = ContentScale.FillBounds
             )
         }
         Row(
@@ -323,6 +324,7 @@ fun PropertyInfoSection(
             icon = Icons.Outlined.LocationOn,
             modifier = Modifier
                 .fillMaxWidth()
+                .offset(x = -(5).dp)
         )
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -332,11 +334,11 @@ fun PropertyInfoSection(
                 modifier = Modifier
                     .height(30.dp)
                     .wrapContentWidth(),
-                rating = property.reviewsPerMonth ?: 0.0
+                rating = property.reviewScoresRating
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = "${property.reviewsPerMonth ?: 0.0}(${property.numberOfReviews})",
+                text = "${property.reviewScoresRating}(${property.numberOfReviews})",
                 modifier = Modifier
                     .weight(1f)
             )
@@ -472,6 +474,17 @@ fun PropertyInfoSection(
             modifier = Modifier
                 .padding(vertical = 5.dp)
         )
+        if (property.houseRules.isNullOrBlank().not()) {
+            Text(
+                text = stringResource(R.string.house_rules),
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(text = property.houseRules!!)
+            HorizontalDivider(
+                modifier = Modifier
+                    .padding(vertical = 5.dp)
+            )
+        }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -495,7 +508,8 @@ fun PropertyInfoSection(
                 modifier = Modifier
                     .size(50.dp)
                     .clip(CircleShape),
-                contentDescription = property.hostName
+                contentDescription = property.hostName,
+                contentScale = ContentScale.FillBounds
             )
         }
         if (property.hostAbout != null) {
@@ -518,7 +532,8 @@ fun PropertyInfoSection(
             modifier = Modifier
                 .fillMaxWidth()
                 .heightIn(min = 2800.dp, max = 230.dp)
-                .clip(MaterialTheme.shapes.medium)
+                .clip(MaterialTheme.shapes.medium),
+            title = property.name
         )
     }
 }

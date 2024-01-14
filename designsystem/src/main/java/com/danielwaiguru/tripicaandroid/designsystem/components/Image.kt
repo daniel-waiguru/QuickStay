@@ -16,7 +16,8 @@ import com.facebook.shimmer.ShimmerDrawable
 fun TripitacAsyncImage(
     url: Any,
     contentDescription: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    contentScale: ContentScale = ContentScale.FillWidth
 ) {
     val shimmer = Shimmer.AlphaHighlightBuilder()
         .setDuration(1800)
@@ -39,7 +40,7 @@ fun TripitacAsyncImage(
             .error(R.drawable.no_image_placeholder)
             .build(),
         contentDescription = contentDescription,
-        contentScale = ContentScale.FillBounds,
+        contentScale = contentScale,
         modifier = modifier
             .testTag("tripitaca_async_image")
     )
