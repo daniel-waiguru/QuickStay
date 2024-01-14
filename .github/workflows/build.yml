@@ -27,6 +27,10 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Create local.properties file
+        env:
+          LOCAL_PROPERTIES: ${{secrets.LOCAL_PROPERTIES}}
+        run: echo $LOCAL_PROPERTIES > local.properties
 
       - name: Run Unit Tests
         run: ./gradlew lintDebug
