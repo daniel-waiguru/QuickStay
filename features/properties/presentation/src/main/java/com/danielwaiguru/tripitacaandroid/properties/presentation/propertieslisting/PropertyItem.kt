@@ -124,7 +124,7 @@ internal fun PropertyItem(
                 }
                 IconText(
                     icon = Icons.Outlined.LocationOn,
-                    text = "${property.city}, ${property.country}",
+                    text = property.street,
                     modifier = Modifier
                         .fillMaxWidth()
                         .offset(x = -(5).dp)

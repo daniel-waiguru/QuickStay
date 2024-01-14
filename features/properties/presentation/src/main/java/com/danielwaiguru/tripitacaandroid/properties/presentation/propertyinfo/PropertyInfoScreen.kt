@@ -320,7 +320,7 @@ fun PropertyInfoSection(
             fontWeight = FontWeight.Bold
         )
         IconText(
-            text = "${property.city}, ${property.country}",
+            text = property.street,
             icon = Icons.Outlined.LocationOn,
             modifier = Modifier
                 .fillMaxWidth()

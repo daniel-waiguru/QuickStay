@@ -34,7 +34,8 @@ fun PropertyDto.toProperty(): Property = Property(
     bathrooms = bathrooms,
     guestsIncluded = guestsIncluded,
     hostAbout = hostAbout,
-    houseRules = houseRules
+    houseRules = houseRules,
+    street = street
 )
 
 fun GeolocationDto.toGeoLocation(): Property.GeoLocation = Property.GeoLocation(

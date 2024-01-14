@@ -6,4 +6,10 @@
     <string name="google_logo">Google logo</string>
     <string name="sign_in_with_google">Sign In with Google</string>
     <string name="web_client_id">244673986272-gs6o9vft6l95u3eo7o0kmnh8mntvmmvu.apps.googleusercontent.com</string>
+    <string name="or">Or</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="please_use_google_sign_in_option_above_to_login">Please use Google Sign In option above to login</string>
 </resources>

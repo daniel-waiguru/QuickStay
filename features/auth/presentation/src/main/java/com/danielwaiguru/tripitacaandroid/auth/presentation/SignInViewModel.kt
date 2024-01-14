@@ -8,13 +8,13 @@ import com.danielwaiguru.tripitacaandroid.auth.presentation.utils.GoogleSignInWr
 import com.danielwaiguru.tripitacaandroid.shared.dispatchers.Dispatcher
 import com.danielwaiguru.tripitacaandroid.shared.dispatchers.DispatcherProvider
 import com.danielwaiguru.tripitacaandroid.shared.models.User
-import com.danielwaiguru.tripitacaandroid.shared.state.ViewState
 import com.google.android.gms.common.api.ApiException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
@@ -25,11 +25,11 @@ class SignInViewModel @Inject constructor(
     private val userDataRepository: UserDataRepository,
     @Dispatcher(DispatcherProvider.IO) private val ioDispatcher: CoroutineDispatcher
 ): ViewModel() {
-    private val _viewState: MutableStateFlow<ViewState<String>?> = MutableStateFlow(null)
-    val viewState: StateFlow<ViewState<String>?> = _viewState.asStateFlow()
+    private val _viewState1: MutableStateFlow<SignInUIState> = MutableStateFlow(SignInUIState())
+    val viewState1: StateFlow<SignInUIState> = _viewState1.asStateFlow()
 
     fun onUserSignIn(data: Intent?) = viewModelScope.launch(ioDispatcher) {
-        _viewState.emit(ViewState.Loading)
+        _viewState1.update { currentState -> currentState.copy(isLoading = true) }
         try {
             val task = googleSignInWrapper.getSignedInAccountFromIntent(data)
             val account = task.getResult(ApiException::class.java)
@@ -42,13 +42,46 @@ class SignInViewModel @Inject constructor(
             )
             val result = userDataRepository.saveUser(user)
             if (result.isSuccess) {
-                _viewState.emit(ViewState.Success(username))
+                _viewState1.update { currentState ->
+                    currentState.copy(
+                        isLoading = false,
+                        isLoggedIn = true
+                    )
+                }
             } else {
-                _viewState.emit(ViewState.Error(messageRes = R.string.login_failed))
+                _viewState1.update { currentState ->
+                    currentState.copy(
+                        isLoading = false,
+                        errorId = R.string.login_failed
+                    )
+                }
             }
         } catch (e: Exception) {
             Timber.e(e)
-            _viewState.emit(ViewState.Error(messageRes = R.string.login_failed))
+            _viewState1.update { currentState ->
+                currentState.copy(
+                    isLoading = false,
+                    errorId = R.string.login_failed
+                )
+            }
+        }
+    }
+
+    fun onEmailChange(email: String) {
+        _viewState1.update { currentState ->
+            currentState.copy(email = email)
+        }
+    }
+
+    fun onPasswordChange(password: String) {
+        _viewState1.update { currentState ->
+            currentState.copy(password = password)
+        }
+    }
+
+    fun onErrorShown() {
+        _viewState1.update { currentState ->
+            currentState.copy(errorId = null)
         }
     }
 }
