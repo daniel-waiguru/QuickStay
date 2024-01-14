@@ -12,6 +12,7 @@ import com.google.maps.android.compose.rememberCameraPositionState
 @Composable
 fun TripitacaGoogleMap(
     location: LatLng,
+    title: String?,
     modifier: Modifier = Modifier
 ) {
     val cameraPositionState = rememberCameraPositionState {
@@ -22,7 +23,8 @@ fun TripitacaGoogleMap(
         cameraPositionState = cameraPositionState
     ) {
         Marker(
-            state = MarkerState(position = location)
+            state = MarkerState(position = location),
+            title = title
         )
     }
 }

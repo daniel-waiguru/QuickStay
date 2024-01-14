@@ -1,9 +1,9 @@
 package com.danielwaiguru.tripitacaandroid.properties.data.mappers
 
-import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.GeolocationDto
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.PropertyDto
 import com.danielwaiguru.tripitacaandroid.shared.dateutils.DateUtils
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 
 fun PropertyDto.toProperty(): Property = Property(
     id = id,
@@ -15,7 +15,7 @@ fun PropertyDto.toProperty(): Property = Property(
     price = price,
     propertyType = propertyType,
     roomType = roomType,
-    reviewScoresRating = reviewScoresRating,
+    reviewScoresRating = ((reviewScoresRating * 5) / 100).toDouble(),
     numberOfReviews = numberOfReviews,
     reviewsPerMonth = reviewsPerMonth,
     city = city,

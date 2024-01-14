@@ -11,7 +11,7 @@ data class Property(
     val price: Int,
     val propertyType: String,
     val roomType: String,
-    val reviewScoresRating: Int,
+    val reviewScoresRating: Double,
     val numberOfReviews: Int?,
     val reviewsPerMonth: Double?,
     val city: String,

@@ -107,8 +107,7 @@ fun SignInScreen(
                 .fillMaxWidth(),
             text = stringResource(R.string.sign_in_with_google),
             onClick = {
-                //getGoogleSignInLauncher.launch(googleSignInClient)
-                      onNavigateToHome()
+                getGoogleSignInLauncher.launch(googleSignInClient)
             },
             loading = state is ViewState.Loading
         )
