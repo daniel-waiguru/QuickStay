@@ -46,8 +46,11 @@ This repo uses Android Studio built-in linter to analyze the codebase and identi
 ```
 
 ## App Screenshots
-| Sign In               | Properties            | Properties Filtered  | Property Details |
-| -------------         |:--------------------: | -------------------: | -----------------:|
-| <img src="/docs/sign_in.png" width="260"/>     | <img src="/docs/properties.png" width="260"/>      | <img src="/docs/properties_filtered.png" width="260"/> | <img src="/docs/property_info1.png" width="260"/> <img src="/docs/property_info2.png" width="260"/>          |
+| Sign In               | Properties            | Properties Filtered  | Property Details | Property Details Scrolled |
+| -------------         |:--------------------: | -------------------: | -----------------:| ------------------------:|
+| <img src="/docs/sign_in.png" width="260"/>     | <img src="/docs/properties.png" width="260"/>      | <img src="/docs/properties_filtered.png" width="260"/> | <img src="/docs/property_info1.png" width="260"/> | <img src="/docs/property_info2.png" width="260"/>          |
 
 ## App Recording 🎥
+
+https://github.com/daniel-waiguru/TripitacaAndroid/assets/52042764/68927301-94c2-4c70-b375-19e4bf6c88af
+
