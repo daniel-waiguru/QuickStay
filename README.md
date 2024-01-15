@@ -28,7 +28,9 @@ To run the project in your local environment, you need
     * [Timber](https://github.com/JakeWharton/timber) - a highly extensible Android logger.
 
 * Architecture
-    * MVVM—Model View ViewModel pattern with Feature-based modularization.
+    * MVVM—Model View ViewModel pattern with Feature-based modularization. Note that this can be modified to include a domain layer for each feature depending on the business logic needed to be handled.
+  
+  <img src="/docs/tripitaca_arch.png" />
 * Gradle
     * [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - An alternative syntax for writing Gradle build scripts using Koltin.
     * [Version Catalogs](https://developer.android.com/build/migrate-to-catalogs) - A scalable way of maintaining dependencies and plugins in a multi-module project.
