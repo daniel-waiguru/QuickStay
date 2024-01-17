@@ -9,7 +9,7 @@ To run the project in your local environment, you need
   MAPS_API_KEY=AIzaSyCGk4OKjMi7O5Rlg7zU9q_xY5e-ROzxIxI
   ```
 * Build the project and run it
-* Ready app APK can be downloaded from [here](https://drive.google.com/file/d/1rh8OYvwXhjMizEKS4GIZkyMwHMD-y0fo/view?usp=sharing)
+* Ready app APK can be downloaded from [here](https://drive.google.com/file/d/17moFdDQkotyMxRdjxulsb7D--M6ioII5/view?usp=sharing)
 * N/B: Please note and notify your team that the input fields for sign-in by email and password are for aesthetic purposes only, and the feature is not yet implemented as there is no login API.
 
 ## Tech-stack
