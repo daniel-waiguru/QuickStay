@@ -9,7 +9,7 @@ To run the project in your local environment, you need
   MAPS_API_KEY=AIzaSyCGk4OKjMi7O5Rlg7zU9q_xY5e-ROzxIxI
   ```
 * Build the project and run it
-* Ready app apk can be downloaded from [here](https://drive.google.com/file/d/1e8jWiWkmpjdKaOZvpL0M-_NOVCOfwYn8/view?usp=sharing)
+* Ready app APK can be downloaded from [here](https://drive.google.com/file/d/17moFdDQkotyMxRdjxulsb7D--M6ioII5/view?usp=sharing)
 * N/B: Please note and notify your team that the input fields for sign-in by email and password are for aesthetic purposes only, and the feature is not yet implemented as there is no login API.
 
 ## Tech-stack
@@ -28,7 +28,9 @@ To run the project in your local environment, you need
     * [Timber](https://github.com/JakeWharton/timber) - a highly extensible Android logger.
 
 * Architecture
-    * MVVM—Model View ViewModel pattern with Feature-based modularization.
+    * MVVM—Model View ViewModel pattern with Feature-based modularization. Note that this can be modified to include a domain layer for each feature depending on the business logic needed to be handled.
+  
+  <img src="/docs/tripitaca_arch.png" />
 * Gradle
     * [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - An alternative syntax for writing Gradle build scripts using Koltin.
     * [Version Catalogs](https://developer.android.com/build/migrate-to-catalogs) - A scalable way of maintaining dependencies and plugins in a multi-module project.
@@ -48,9 +50,13 @@ This repo uses Android Studio's built-in linter to analyze the codebase and iden
 ```
 
 ## App Screenshots
-| Sign In               | Properties            | Properties Filtered  | Property Details | Property Details Scrolled |
-| -------------         |:--------------------: | -------------------: | -----------------:| ------------------------:|
-| <img src="/docs/sign_in.png" width="260"/>     | <img src="/docs/properties.png" width="260"/>      | <img src="/docs/properties_filtered.png" width="260"/> | <img src="/docs/property_info1.png" width="260"/> | <img src="/docs/property_info2.png" width="260"/>          |
+| Sign In               | Properties            | Properties Filtered  |
+| -------------         |:--------------------: | -------------------: |
+| <img src="/docs/sign_in.png" width="260"/>     | <img src="/docs/properties.png" width="260"/>      | <img src="/docs/properties_filtered.png" width="260"/> |
+
+| Property Details | Property Details Scrolled |
+| -----------------:| ------------------------:|
+| <img src="/docs/property_info1.png" width="260"/> | <img src="/docs/property_info2.png" width="260"/>          |
 
 ## App Recording 🎥
 
