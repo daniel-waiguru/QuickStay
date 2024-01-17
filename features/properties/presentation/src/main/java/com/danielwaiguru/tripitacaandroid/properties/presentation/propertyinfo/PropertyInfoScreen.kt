@@ -121,15 +121,6 @@ fun PropertyInfoScreen(
             }
 
             ViewState.Loading -> {
-//                Box(
-//                    modifier = Modifier
-//                        .fillMaxSize()
-//                ) {
-//                    ProgressIndicator(
-//                        modifier = Modifier
-//                            .align(Alignment.Center)
-//                    )
-//                }
             }
             is ViewState.Success -> {
                 Column(
@@ -146,7 +137,7 @@ fun PropertyInfoScreen(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .wrapContentHeight()
-                                    .height(300.dp),
+                                    .height(350.dp),
                                 onAddToFavourite = onAddToFavourite,
                                 onNavigateBack = onNavigateBack
                             )
