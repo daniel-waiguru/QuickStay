@@ -230,7 +230,7 @@ private fun PropertyImagesSlider(
                             if (index == pagerState.currentPage) {
                                 MaterialTheme.colorScheme.primary
                             } else {
-                                MaterialTheme.colorScheme.surface
+                                MaterialTheme.colorScheme.outlineVariant
                             }
                         )
                 )
