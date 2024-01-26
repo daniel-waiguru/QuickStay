@@ -2,10 +2,10 @@ package com.danielwaiguru.tripicaandroid.designsystem.components
 
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 
 @Composable
 fun TripitacaChip(
@@ -19,8 +19,10 @@ fun TripitacaChip(
         },
         modifier = modifier,
         border = null,
-        colors = AssistChipDefaults.assistChipColors(
-            containerColor = Color(0xFFEEEEEE)
+        colors = AssistChipDefaults.assistChipColors().copy(
+            containerColor = MaterialTheme.colorScheme.outlineVariant.copy(
+                alpha = 0.5f
+            )
         )
     )
 }

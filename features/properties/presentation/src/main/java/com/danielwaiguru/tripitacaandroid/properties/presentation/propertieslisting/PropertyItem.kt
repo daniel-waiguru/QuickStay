@@ -49,8 +49,8 @@ internal fun PropertyItem(
     Card(
         modifier = modifier,
         shape = MaterialTheme.shapes.medium,
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
+        colors = CardDefaults.cardColors().copy(
+            containerColor = MaterialTheme.colorScheme.background
         )
     ) {
         Column(
@@ -98,7 +98,7 @@ internal fun PropertyItem(
                         text = property.propertyType,
                         modifier = Modifier
                             .background(
-                                MaterialTheme.colorScheme.surface,
+                                MaterialTheme.colorScheme.surface.copy(alpha = 0.7f),
                                 shape = RoundedCornerShape(100)
                             )
                             .padding(
