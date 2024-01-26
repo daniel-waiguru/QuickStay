@@ -124,8 +124,7 @@ fun SignInScreen(
                 .padding(top = 80.dp),
             text = stringResource(R.string.sign_in_with_google),
             onClick = {
-                //getGoogleSignInLauncher.launch(googleSignInClient)
-                      onNavigateToHome()
+                getGoogleSignInLauncher.launch(googleSignInClient)
             },
             loading = state.isLoading
         )
