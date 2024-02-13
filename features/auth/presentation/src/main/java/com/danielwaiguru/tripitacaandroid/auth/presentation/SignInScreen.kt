@@ -68,7 +68,7 @@ fun SignInScreen(
     onNavigateToHome: () -> Unit,
     onEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
-    onErrorShown:() -> Unit,
+    onErrorShown: () -> Unit,
     state: SignInUIState
 ) {
     val webClient = stringResource(id = R.string.web_client_id)
@@ -105,7 +105,7 @@ fun SignInScreen(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
 
-    ) {
+        ) {
         Image(
             painter = painterResource(id = R.drawable.tripitaca),
             contentDescription = stringResource(R.string.tripitaca_logo),
@@ -159,7 +159,8 @@ fun SignInScreen(
                 .weight(1f),
             state = state,
             onEmailChange = onEmailChange,
-            onPasswordChange = onPasswordChange
+            onPasswordChange = onPasswordChange,
+            onNavigateToHome = onNavigateToHome
         )
     }
 }
@@ -186,12 +187,9 @@ fun SignInWithEmail(
     modifier: Modifier = Modifier,
     onEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
+    onNavigateToHome: () -> Unit,
     state: SignInUIState
 ) {
-    val context = LocalContext.current
-    val attemptEmailLoginMessage = stringResource(
-        R.string.please_use_google_sign_in_option_above_to_login
-    )
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.Start,
@@ -239,11 +237,7 @@ fun SignInWithEmail(
         TripitacaPrimaryButton(
             text = stringResource(id = R.string.sign_in),
             onClick = {
-                 Toast.makeText(
-                     context,
-                     attemptEmailLoginMessage,
-                     Toast.LENGTH_SHORT
-                 ).show()
+                onNavigateToHome()
             },
             modifier = Modifier
                 .fillMaxWidth()

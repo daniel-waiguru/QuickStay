@@ -65,6 +65,7 @@ import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaChip
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaPrimaryButton
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRatingBar
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaTopAppBar
+import com.danielwaiguru.tripicaandroid.designsystem.components.WormPageIndicator
 import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
 import com.danielwaiguru.tripitacaandroid.properties.presentation.R
 import com.danielwaiguru.tripitacaandroid.properties.presentation.components.TripitacaCalendar
@@ -124,6 +125,7 @@ fun PropertyInfoScreen(
 
             ViewState.Loading -> {
             }
+
             is ViewState.Success -> {
                 Column(
                     verticalArrangement = Arrangement.spacedBy(-(15).dp)
@@ -206,37 +208,15 @@ private fun PropertyImagesSlider(
                 contentScale = ContentScale.FillBounds
             )
         }
-        Row(
+        WormPageIndicator(
+            totalPages = property.photos.size,
+            currentPage = pagerState.currentPage,
             modifier = Modifier
-                .offset(y = -(20).dp)
+                .offset(y = -(24).dp)
                 .fillMaxWidth(0.5f)
-                .align(Alignment.BottomCenter),
-            horizontalArrangement = Arrangement
-                .Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            repeat(property.photos.size) { index ->
-                Box(
-                    modifier = Modifier
-                        .size(
-                            if (index == pagerState.currentPage) {
-                                12.dp
-                            } else {
-                                10.dp
-                            }
-                        )
-                        .clip(RoundedCornerShape(100))
-                        .background(
-                            if (index == pagerState.currentPage) {
-                                MaterialTheme.colorScheme.primary
-                            } else {
-                                MaterialTheme.colorScheme.outlineVariant
-                            }
-                        )
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-            }
-        }
+                .align(Alignment.BottomCenter)
+
+        )
         TripitacaTopAppBar(
             modifier = Modifier
                 .fillMaxWidth()
