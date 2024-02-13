@@ -6,7 +6,7 @@ To run the project in your local environment, you need
 * Add your Google maps API Key to `local.properties` file 
 * Build the project and run it
 * Ready app APK can be downloaded from [here](https://drive.google.com/file/d/1Jr4apy5jeSBAjQ5TOufV2t2auIbsVYM5/view?usp=drive_link)
-* N/B: Please note and notify your team that the input fields for sign-in by email and password are for aesthetic purposes only, and the feature is not yet implemented as there is no login API.
+
 
 ## Tech-stack
 * Tech-stack
@@ -25,8 +25,8 @@ To run the project in your local environment, you need
 
 * Architecture
     * MVVM—Model View ViewModel pattern with Feature-based modularization. 
-    * NB This can be modified to include a domain layer for each feature depending on the business logic needed to be handled.
-    * NB This is a small project hence Modularization is an overkill but it is implemented to demonstrate how Feature based modularization can be implemented in a large scale complex project
+    * N/B This can be modified to include a domain layer for each feature depending on the business logic needed to be handled.
+    * N/B This is a small project, hence Modularization is an overkill, but it is implemented to demonstrate how Feature-based modularization can be implemented in a large-scale complex project
   
   <img src="/docs/tripitaca_arch.png" />
 * Gradle
