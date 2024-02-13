@@ -50,6 +50,7 @@ This repo uses Android Studio's built-in linter to analyze the codebase and iden
 ```
 
 ## App Screenshots
+### Light Mode
 | Sign In               | Properties            | Properties Filtered  |
 | -------------         |:--------------------: | -------------------: |
 | <img src="/docs/sign_in.png" width="260"/>     | <img src="/docs/properties.png" width="260"/>      | <img src="/docs/properties_filtered.png" width="260"/> |
@@ -58,6 +59,14 @@ This repo uses Android Studio's built-in linter to analyze the codebase and iden
 | -----------------:| ------------------------:|
 | <img src="/docs/property_info1.png" width="260"/> | <img src="/docs/property_info2.png" width="260"/>          |
 
+### Dark Mode
+| Sign In                                         |                     Properties                     |                                    Property Info |
+|-------------------------------------------------|:--------------------------------------------------:|-------------------------------------------------:|
+| <img src="/docs/sign_in_dark.png" width="260"/> | <img src="/docs/properties_dark.png" width="260"/> | <img src="/docs/property_dark.png" width="260"/> |
+
+|  Booking                                        | 
+|------------------------------------------------:|
+| <img src="/docs/booking_dark.png" width="260"/> |
 ## App Recording 🎥
 
 https://github.com/daniel-waiguru/TripitacaAndroid/assets/52042764/537a0af0-c3e4-4288-b1e4-f836ab1d1803
