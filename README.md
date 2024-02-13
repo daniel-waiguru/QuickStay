@@ -3,13 +3,9 @@ An Android app that presents a list of listings using data from the provided JSO
 To run the project in your local environment, you need
 * Go to the android studio and create a new project using the 'Get from version control' option.
 * Paste this link `https://github.com/daniel-waiguru/TripitacaAndroid.git`
-* Add your Google maps API Key to `local.properties` file or copy paste the one provided below
-
-  ```
-  MAPS_API_KEY=AIzaSyCGk4OKjMi7O5Rlg7zU9q_xY5e-ROzxIxI
-  ```
+* Add your Google maps API Key to `local.properties` file 
 * Build the project and run it
-* Ready app APK can be downloaded from [here](https://drive.google.com/file/d/17moFdDQkotyMxRdjxulsb7D--M6ioII5/view?usp=sharing)
+* Ready app APK can be downloaded from [here](https://drive.google.com/file/d/1Jr4apy5jeSBAjQ5TOufV2t2auIbsVYM5/view?usp=drive_link)
 * N/B: Please note and notify your team that the input fields for sign-in by email and password are for aesthetic purposes only, and the feature is not yet implemented as there is no login API.
 
 ## Tech-stack
@@ -28,7 +24,9 @@ To run the project in your local environment, you need
     * [Timber](https://github.com/JakeWharton/timber) - a highly extensible Android logger.
 
 * Architecture
-    * MVVM—Model View ViewModel pattern with Feature-based modularization. Note that this can be modified to include a domain layer for each feature depending on the business logic needed to be handled.
+    * MVVM—Model View ViewModel pattern with Feature-based modularization. 
+    * NB This can be modified to include a domain layer for each feature depending on the business logic needed to be handled.
+    * NB This is a small project hence Modularization is an overkill but it is implemented to demonstrate how Feature based modularization can be implemented in a large scale complex project
   
   <img src="/docs/tripitaca_arch.png" />
 * Gradle

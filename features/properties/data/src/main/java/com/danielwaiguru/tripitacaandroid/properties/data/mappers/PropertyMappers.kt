@@ -1,6 +1,5 @@
 package com.danielwaiguru.tripitacaandroid.properties.data.mappers
 
-import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.GeolocationDto
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.PropertyDto
 import com.danielwaiguru.tripitacaandroid.shared.dateutils.DateUtils
 import com.danielwaiguru.tripitacaandroid.shared.models.Property
@@ -8,7 +7,7 @@ import java.util.Locale
 
 fun PropertyDto.toProperty(): Property = Property(
     id = id,
-    location = geolocation.toGeoLocation(),
+    location = geolocation,
     hostName = hostName,
     hostPictureUrl = hostPictureUrl,
     name = name,
@@ -36,9 +35,4 @@ fun PropertyDto.toProperty(): Property = Property(
     hostAbout = hostAbout,
     houseRules = houseRules,
     street = street
-)
-
-fun GeolocationDto.toGeoLocation(): Property.GeoLocation = Property.GeoLocation(
-    latitude = lat,
-    longitude = lon
 )

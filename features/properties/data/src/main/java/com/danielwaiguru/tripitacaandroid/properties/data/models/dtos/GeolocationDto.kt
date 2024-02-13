@@ -2,11 +2,12 @@ package com.danielwaiguru.tripitacaandroid.properties.data.models.dtos
 
 
 import androidx.annotation.Keep
+import com.danielwaiguru.tripitacaandroid.shared.models.GeoLocation
 import com.google.gson.annotations.SerializedName
 @Keep
 data class GeolocationDto(
     @SerializedName("lat")
-    val lat: Double,
+    override val latitude: Double,
     @SerializedName("lon")
-    val lon: Double
-)
+    override val longitude: Double,
+): GeoLocation

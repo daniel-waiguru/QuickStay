@@ -27,9 +27,4 @@ data class Property(
     val houseRules: String?,
     val street: String,
     val isFavourite: Boolean = false
-) {
-    data class GeoLocation(
-        val latitude: Double,
-        val longitude: Double
-    )
-}
+)
