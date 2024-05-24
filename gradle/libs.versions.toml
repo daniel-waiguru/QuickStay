@@ -1,58 +1,56 @@
 [versions]
 agp = "8.2.2"
-kotlin = "1.9.22"
-ksp = "1.9.22-1.0.17"
-core-ktx = "1.12.0"
+kotlin = "2.0.0"
+ksp = "2.0.0-1.0.21"
+core-ktx = "1.13.1"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 leakcanaryAndroid = "2.12"
 lifecycle-runtime-ktx = "2.6.2"
-activity-compose = "1.8.2"
-compose-bom = "2024.02.00"
-androidxComposeCompiler = "1.5.9"
+activity-compose = "1.9.0"
+compose-bom = "2024.05.00"
 appcompat = "1.6.1"
-lottieCompose = "5.2.0"
-material = "1.11.0"
-hilt = "2.48.1"
-hiltExt = "1.1.0"
+lottieCompose = "6.4.0"
+material = "1.12.0"
+hilt = "2.49"
+hiltExt = "1.2.0"
 timber = "5.0.1"
 retrofit = "2.9.0"
 okhttp = "4.12.0"
 coilCompose = "2.4.0"
 chucker = "4.0.0"
-kotlinxCoroutines = "1.7.3"
+kotlinxCoroutines = "1.8.0"
 junit4Ext = "1.1.5"
 junit4 = "4.13.2"
 turbine = "1.0.0"
-mockk = "1.13.9"
-googleTruth = "1.4.0"
+mockk = "1.13.10"
+googleTruth = "1.4.2"
 archCore = "2.2.0"
 robolectric = "4.10.3"
-lifecycle = "2.7.0"
-coil = "2.5.0"
+lifecycle = "2.8.0"
+coil = "2.6.0"
 javax = "1"
-googleFont = "1.6.1"
+googleFont = "1.6.7"
 androidxNavigation = "2.8.0-beta01"
 shimmer = "0.5.0"
 googleAccompanist = "0.32.0"
-mapsCompose = "4.3.2"
+mapsCompose = "4.3.3"
 ktlint = "11.5.1"
 spotless = "6.21.0"
 room = "2.6.1"
 targetSdk = "34"
 compileSdk = "34"
 minSdk = "24"
-playServicesLocation = "21.1.0"
+playServicesLocation = "21.2.0"
 androidDesugarJdkLibs = "2.0.4"
 jacoco = "0.8.7"
-googleAuth = "20.7.0"
-protobuf = "3.25.2"
+googleAuth = "21.1.1"
+protobuf = "4.26.1"
 protobufPlugin = "0.9.4"
-datastore = "1.0.0"
+datastore = "1.1.1"
 gson = "2.10.1"
 mapsplatformSecrets = "2.0.1"
-material3Android = "1.2.0"
 kotlinx-json = "1.6.3"
 
 [libraries]
@@ -68,7 +66,6 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigation" }
 androidx-lifecycle-viewModel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
@@ -148,6 +145,7 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 com-google-android-libraries-mapsplatform-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "mapsplatformSecrets" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 # Plugins defined by this project
 
@@ -160,8 +158,7 @@ compose = [
     "ui-tooling-preview",
     "androidx-compose-material-icons-extended",
     "androidx-lifecycle-runtime-compose",
-    #"material3",
-    "androidx-material3-android",
+    "material3",
     "androidx-lifecycle-viewModel-compose",
     "androidx-hilt-navigation-compose",
     "androidx-navigation-compose"
