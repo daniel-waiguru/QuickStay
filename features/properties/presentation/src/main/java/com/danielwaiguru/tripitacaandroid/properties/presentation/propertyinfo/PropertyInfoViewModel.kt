@@ -3,8 +3,9 @@ package com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.toRoute
 import com.danielwaiguru.tripitacaandroid.properties.data.repositories.PropertiesRepository
-import com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.navigation.PropertyArgs
+import com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.navigation.PropertyInfoScreen
 import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import com.danielwaiguru.tripitacaandroid.shared.state.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,7 +20,7 @@ class PropertyInfoViewModel @Inject constructor(
     private val propertiesRepository: PropertiesRepository,
     savedStateHandle: SavedStateHandle
 ): ViewModel() {
-    private val propertyArg = PropertyArgs(savedStateHandle)
+    private val propertyArg = savedStateHandle.toRoute<PropertyInfoScreen>()
     private val _viewState: MutableStateFlow<ViewState<Property>> = MutableStateFlow(
         ViewState.Loading
     )

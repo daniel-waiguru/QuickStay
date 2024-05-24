@@ -5,22 +5,23 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.NavOptions
 import androidx.navigation.navigation
-import com.danielwaiguru.tripitacaandroid.properties.presentation.propertieslisting.navigation.PropertiesScreenDestination
+import com.danielwaiguru.tripitacaandroid.properties.presentation.propertieslisting.navigation.PropertiesScreen
 import com.danielwaiguru.tripitacaandroid.properties.presentation.propertieslisting.navigation.propertiesScreen
 import com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.navigation.propertyInfoScreen
+import kotlinx.serialization.Serializable
 
-private const val PROPERTIES_GRAPH_ROUTE_PATTERN = "properties"
 fun NavController.navigateToPropertiesGraph(navOptions: NavOptions? = null) = navigate(
-    PROPERTIES_GRAPH_ROUTE_PATTERN,
+    PropertiesNavigationGraph,
     navOptions
 )
+@Serializable
+object PropertiesNavigationGraph
 fun NavGraphBuilder.propertiesFeatureGraph(
     navController: NavHostController,
     onClickBookNow: (id: String) -> Unit
 ) {
-    navigation(
-        route = PROPERTIES_GRAPH_ROUTE_PATTERN,
-        startDestination = PropertiesScreenDestination.destination
+    navigation<PropertiesNavigationGraph>(
+        startDestination = PropertiesScreen
     ) {
         propertiesScreen(navController)
         propertyInfoScreen(navController, onClickBookNow)

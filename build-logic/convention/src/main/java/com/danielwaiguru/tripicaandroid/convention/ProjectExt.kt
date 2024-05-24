@@ -12,3 +12,4 @@ val Project.libs
 
 fun Project.getIntVersion(name: String): Int =
     libs.findVersion(name).get().toString().toInt()
+fun Project.getPluginId(alias: String): String = libs.findPlugin(alias).get().get().pluginId
