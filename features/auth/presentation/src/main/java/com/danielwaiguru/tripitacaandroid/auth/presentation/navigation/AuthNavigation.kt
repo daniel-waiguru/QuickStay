@@ -5,19 +5,14 @@ import androidx.compose.animation.core.tween
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.danielwaiguru.tripitacaandroid.auth.presentation.SignInRoute
-import com.danielwaiguru.tripitacaandroid.shared.navigation.AppNavigationDestination
 import com.danielwaiguru.tripitacaandroid.shared.navigation.animationDuration
+import kotlinx.serialization.Serializable
 
-object SignInScreenDestination : AppNavigationDestination {
-    override val route: String
-        get() = "com.danielwaiguru.tripitacaandroid.auth.SignInScreen"
-    override val destination: String
-        get() = "com.danielwaiguru.tripitacaandroid.auth.SignInScreenDestination"
-}
+@Serializable
+object SignInScreen
 
 fun NavGraphBuilder.signInScreen(onNavigateToHome: () -> Unit) {
-    composable(
-        route = SignInScreenDestination.route,
+    composable<SignInScreen>(
         enterTransition = {
             slideIntoContainer(
                 towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,

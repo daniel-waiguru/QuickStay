@@ -3,9 +3,10 @@ package com.danielwaiguru.tripitacaandroid.booking.presentation
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.toRoute
 import com.danielwaiguru.tripitacaandroid.booking.presentation.models.BookingEvent
 import com.danielwaiguru.tripitacaandroid.booking.presentation.models.BookingUIState
-import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.PropertyArgs
+import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.BookingScreen
 import com.danielwaiguru.tripitacaandroid.properties.data.repositories.PropertiesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,7 +26,7 @@ class BookingViewModel @Inject constructor(
         BookingUIState()
     )
     val viewState: StateFlow<BookingUIState> = _viewState.asStateFlow()
-    private val propertyArg = PropertyArgs(savedStateHandle)
+    private val propertyArg = savedStateHandle.toRoute<BookingScreen>()
 
     init {
         getProperty(propertyArg.propertyId)

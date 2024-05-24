@@ -9,7 +9,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
-import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.SignInScreenDestination
+import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.SignInScreen
 import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.signInScreen
 import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.bookingScreen
 import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.navigateToBookingScreen
@@ -26,7 +26,7 @@ fun TripitacaRootNavigation() {
         ) {
             NavHost(
                 navController = navController,
-                startDestination = SignInScreenDestination.route
+                startDestination = SignInScreen
             ) {
                 signInScreen(
                     onNavigateToHome = {

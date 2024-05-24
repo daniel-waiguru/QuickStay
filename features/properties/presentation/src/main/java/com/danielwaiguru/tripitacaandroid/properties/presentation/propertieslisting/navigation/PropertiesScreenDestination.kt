@@ -7,18 +7,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.danielwaiguru.tripitacaandroid.properties.presentation.propertieslisting.PropertiesRoute
 import com.danielwaiguru.tripitacaandroid.properties.presentation.propertyinfo.navigation.navigateToPropertyInfo
-import com.danielwaiguru.tripitacaandroid.shared.navigation.AppNavigationDestination
 import com.danielwaiguru.tripitacaandroid.shared.navigation.animationDuration
+import kotlinx.serialization.Serializable
 
-object PropertiesScreenDestination: AppNavigationDestination {
-    override val route: String = "com.danielwaiguru.tripitacaandroid.properties.PropertiesScreen"
-    override val destination: String =
-        "com.danielwaiguru.tripitacaandroid.properties.PropertiesScreenDestination"
-}
+@Serializable
+object PropertiesScreen
 
 fun NavGraphBuilder.propertiesScreen(navController: NavHostController) {
-    composable(
-        route = PropertiesScreenDestination.destination,
+    composable<PropertiesScreen>(
         enterTransition = {
             slideIntoContainer(
                 towards = AnimatedContentTransitionScope.SlideDirection.Companion.Left,
