@@ -2,6 +2,7 @@
 plugins {
     id("tripitacaandroid.android.library")
     id("tripitacaandroid.android.hilt")
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 android {
@@ -11,5 +12,5 @@ android {
 dependencies {
     implementation(libs.datastore.preferences)
     implementation(projects.shared)
-    implementation(libs.gson)
+    implementation(libs.kotlinx.json)
 }

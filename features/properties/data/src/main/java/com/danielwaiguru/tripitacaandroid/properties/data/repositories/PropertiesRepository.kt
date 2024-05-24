@@ -2,14 +2,15 @@ package com.danielwaiguru.tripitacaandroid.properties.data.repositories
 
 import android.content.Context
 import com.danielwaiguru.tripitacaandroid.properties.data.mappers.toProperty
-import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.PropertyDto
 import com.danielwaiguru.tripitacaandroid.properties.data.models.response.PropertiesResponse
 import com.danielwaiguru.tripitacaandroid.properties.data.utils.parseJson
 import com.danielwaiguru.tripitacaandroid.shared.dispatchers.Dispatcher
 import com.danielwaiguru.tripitacaandroid.shared.dispatchers.DispatcherProvider
+import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.serialization.json.Json
 import javax.inject.Inject
 
 interface PropertiesRepository {
@@ -19,14 +20,16 @@ interface PropertiesRepository {
 
 internal class PropertiesRepositoryImpl @Inject constructor(
     @Dispatcher(DispatcherProvider.IO) private val ioDispatcher: CoroutineDispatcher,
-    @ApplicationContext private val context: Context
+    @ApplicationContext private val context: Context,
+    private val kotlinxJson: Json
 ): PropertiesRepository {
     override suspend fun getListing(): Result<List<Property>> {
         return try {
             val response = parseJson<PropertiesResponse>(
                 path = "listings.json",
                 context = context,
-                dispatcher = ioDispatcher
+                dispatcher = ioDispatcher,
+                kotlinxJson = kotlinxJson
             )
             Result.success(response.results.map(PropertyDto::toProperty))
         } catch (e: Exception) {
@@ -40,7 +43,8 @@ internal class PropertiesRepositoryImpl @Inject constructor(
             val response = parseJson<PropertiesResponse>(
                 path = "listings.json",
                 context = context,
-                dispatcher = ioDispatcher
+                dispatcher = ioDispatcher,
+                kotlinxJson = kotlinxJson
             )
             val property = response.results.find {
                 it.id == propertyId

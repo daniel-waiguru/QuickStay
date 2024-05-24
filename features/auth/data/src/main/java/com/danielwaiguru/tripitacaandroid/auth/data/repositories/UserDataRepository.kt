@@ -3,9 +3,10 @@ package com.danielwaiguru.tripitacaandroid.auth.data.repositories
 import com.danielwaiguru.tripitacaandroid.auth.data.sources.local.TripitacaDataStore
 import com.danielwaiguru.tripitacaandroid.shared.contants.SharedConstants.USERNAME_KEY
 import com.danielwaiguru.tripitacaandroid.shared.models.User
-import com.google.gson.Gson
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import javax.inject.Inject
 
 interface UserDataRepository {
@@ -15,10 +16,11 @@ interface UserDataRepository {
 }
 
 internal class UserDataRepositoryImpl @Inject constructor(
-    private val tripitacaDataStore: TripitacaDataStore
+    private val tripitacaDataStore: TripitacaDataStore,
+    private val kotlinxJson: Json
 ): UserDataRepository {
     override suspend fun saveUser(username: User): Result<Unit> = try {
-        Result.success(tripitacaDataStore.set(USERNAME_KEY, Gson().toJson(username)))
+        Result.success(tripitacaDataStore.set(USERNAME_KEY, kotlinxJson.encodeToString(username)))
     } catch (e: Exception) {
         e.printStackTrace()
         Result.failure(e)
@@ -30,7 +32,7 @@ internal class UserDataRepositoryImpl @Inject constructor(
                 if (it.isBlank()) {
                     null
                 } else {
-                    Gson().fromJson(it, User::class.java)
+                    kotlinxJson.decodeFromString(it)
                 }
             }
     }

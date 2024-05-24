@@ -1,13 +1,14 @@
 package com.danielwaiguru.tripitacaandroid.properties.data.models.dtos
 
 
-import androidx.annotation.Keep
 import com.danielwaiguru.tripitacaandroid.shared.models.GeoLocation
-import com.google.gson.annotations.SerializedName
-@Keep
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class GeolocationDto(
-    @SerializedName("lat")
+    @SerialName("lat")
     override val latitude: Double,
-    @SerializedName("lon")
+    @SerialName("lon")
     override val longitude: Double,
 ): GeoLocation
