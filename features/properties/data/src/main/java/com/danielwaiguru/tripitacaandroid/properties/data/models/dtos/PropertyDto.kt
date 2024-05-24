@@ -1,150 +1,150 @@
 package com.danielwaiguru.tripitacaandroid.properties.data.models.dtos
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
-import androidx.annotation.Keep
-import com.google.gson.annotations.SerializedName
-@Keep
+@Serializable
 data class PropertyDto(
-    @SerializedName("access")
-    val access: String,
-    @SerializedName("accommodates")
+    @SerialName("access")
+    val access: String? = null,
+    @SerialName("accommodates")
     val accommodates: Int,
-    @SerializedName("amenities")
-    val amenities: List<String>?,
-    @SerializedName("bathrooms")
+    @SerialName("amenities")
+    val amenities: List<String>? = null,
+    @SerialName("bathrooms")
     val bathrooms: Int,
-    @SerializedName("bed_type")
+    @SerialName("bed_type")
     val bedType: String,
-    @SerializedName("bedrooms")
+    @SerialName("bedrooms")
     val bedrooms: Int,
-    @SerializedName("beds")
+    @SerialName("beds")
     val beds: Int,
-    @SerializedName("booked_dates")
+    @SerialName("booked_dates")
     val bookedDates: List<String>,
-    @SerializedName("calculated_host_listings_count")
+    @SerialName("calculated_host_listings_count")
     val calculatedHostListingsCount: Int,
-    @SerializedName("calendar_updated")
-    val calendarUpdated: String,
-    @SerializedName("cancellation_policy")
+    @SerialName("calendar_updated")
+    val calendarUpdated: String? = null,
+    @SerialName("cancellation_policy")
     val cancellationPolicy: String,
-    @SerializedName("city")
+    @SerialName("city")
     val city: String,
-    @SerializedName("country")
+    @SerialName("country")
     val country: String,
-    @SerializedName("country_code")
+    @SerialName("country_code")
     val countryCode: String,
-    @SerializedName("description")
+    @SerialName("description")
     val description: String,
-    @SerializedName("experiences_offered")
+    @SerialName("experiences_offered")
     val experiencesOffered: String,
-    @SerializedName("extra_people")
+    @SerialName("extra_people")
     val extraPeople: Int,
-    @SerializedName("first_review")
-    val firstReview: String,
-    @SerializedName("geolocation")
+    @SerialName("first_review")
+    val firstReview: String? = null,
+    @SerialName("geolocation")
     val geolocation: GeolocationDto,
-    @SerializedName("guests_included")
+    @SerialName("guests_included")
     val guestsIncluded: Int,
-    @SerializedName("host_about")
-    val hostAbout: String?,
-    @SerializedName("host_acceptance_rate")
-    val hostAcceptanceRate: Int?,
-    @SerializedName("host_id")
+    @SerialName("host_about")
+    val hostAbout: String? = null,
+    @SerialName("host_acceptance_rate")
+    val hostAcceptanceRate: Int? = null,
+    @SerialName("host_id")
     val hostId: String,
-    @SerializedName("host_listings_count")
+    @SerialName("host_listings_count")
     val hostListingsCount: Int,
-    @SerializedName("host_location")
+    @SerialName("host_location")
     val hostLocation: String,
-    @SerializedName("host_name")
+    @SerialName("host_name")
     val hostName: String,
-    @SerializedName("host_neighbourhood")
-    val hostNeighbourhood: String,
-    @SerializedName("host_picture_url")
+    @SerialName("host_neighbourhood")
+    val hostNeighbourhood: String? = null,
+    @SerialName("host_picture_url")
     val hostPictureUrl: String,
-    @SerializedName("host_response_rate")
-    val hostResponseRate: Int,
-    @SerializedName("host_response_time")
-    val hostResponseTime: String,
-    @SerializedName("host_since")
+    @SerialName("host_response_rate")
+    val hostResponseRate: Int? = null,
+    @SerialName("host_response_time")
+    val hostResponseTime: String? = null,
+    @SerialName("host_since")
     val hostSince: String,
-    @SerializedName("host_thumbnail_url")
+    @SerialName("host_thumbnail_url")
     val hostThumbnailUrl: String,
-    @SerializedName("host_total_listings_count")
+    @SerialName("host_total_listings_count")
     val hostTotalListingsCount: Int,
-    @SerializedName("host_verifications")
+    @SerialName("host_verifications")
     val hostVerifications: List<String>,
-    @SerializedName("house_rules")
-    val houseRules: String?,
-    @SerializedName("id")
+    @SerialName("house_rules")
+    val houseRules: String? = null,
+    @SerialName("id")
     val id: String,
-    @SerializedName("last_review")
-    val lastReview: String,
-    @SerializedName("latitude")
+    @SerialName("last_review")
+    val lastReview: String? = null,
+    @SerialName("latitude")
     val latitude: String,
-    @SerializedName("longitude")
+    @SerialName("longitude")
     val longitude: String,
-    @SerializedName("market")
+    @SerialName("market")
     val market: String,
-    @SerializedName("maximum_nights")
+    @SerialName("maximum_nights")
     val maximumNights: Int,
-    @SerializedName("minimum_nights")
+    @SerialName("minimum_nights")
     val minimumNights: Int,
-    @SerializedName("monthly_price")
-    val monthlyPrice: Int?,
-    @SerializedName("name")
+    @SerialName("monthly_price")
+    val monthlyPrice: Int? = null,
+    @SerialName("name")
     val name: String,
-    @SerializedName("neighborhood_overview")
-    val neighborhoodOverview: String,
-    @SerializedName("neighbourhood")
-    val neighbourhood: String,
-    @SerializedName("neighbourhood_cleansed")
+    @SerialName("neighborhood_overview")
+    val neighborhoodOverview: String? = null,
+    @SerialName("neighbourhood")
+    val neighbourhood: String? = null,
+    @SerialName("neighbourhood_cleansed")
     val neighbourhoodCleansed: String,
-    @SerializedName("neighbourhood_group_cleansed")
+    @SerialName("neighbourhood_group_cleansed")
     val neighbourhoodGroupCleansed: String,
-    @SerializedName("notes")
-    val notes: String,
-    @SerializedName("number_of_reviews")
+    @SerialName("notes")
+    val notes: String? = null,
+    @SerialName("number_of_reviews")
     val numberOfReviews: Int,
-    @SerializedName("photos")
+    @SerialName("photos")
     val photos: List<String>,
-    @SerializedName("price")
+    @SerialName("price")
     val price: Int,
-    @SerializedName("property_type")
+    @SerialName("property_type")
     val propertyType: String,
-    @SerializedName("review_scores_accuracy")
-    val reviewScoresAccuracy: Int,
-    @SerializedName("review_scores_checkin")
-    val reviewScoresCheckin: Int,
-    @SerializedName("review_scores_cleanliness")
-    val reviewScoresCleanliness: Int,
-    @SerializedName("review_scores_communication")
-    val reviewScoresCommunication: Int,
-    @SerializedName("review_scores_location")
-    val reviewScoresLocation: Int,
-    @SerializedName("review_scores_rating")
-    val reviewScoresRating: Int,
-    @SerializedName("review_scores_value")
-    val reviewScoresValue: Int,
-    @SerializedName("reviews_per_month")
-    val reviewsPerMonth: Double,
-    @SerializedName("room_type")
+    @SerialName("review_scores_accuracy")
+    val reviewScoresAccuracy: Int? = null,
+    @SerialName("review_scores_checkin")
+    val reviewScoresCheckin: Int? = null,
+    @SerialName("review_scores_cleanliness")
+    val reviewScoresCleanliness: Int? = null,
+    @SerialName("review_scores_communication")
+    val reviewScoresCommunication: Int? = null,
+    @SerialName("review_scores_location")
+    val reviewScoresLocation: Int? = null,
+    @SerialName("review_scores_rating")
+    val reviewScoresRating: Int? = null,
+    @SerialName("review_scores_value")
+    val reviewScoresValue: Int? = null,
+    @SerialName("reviews_per_month")
+    val reviewsPerMonth: Double? = null,
+    @SerialName("room_type")
     val roomType: String,
-    @SerializedName("security_deposit")
-    val securityDeposit: Int?,
-    @SerializedName("smart_location")
+    @SerialName("security_deposit")
+    val securityDeposit: Int? = null,
+    @SerialName("smart_location")
     val smartLocation: String,
-    @SerializedName("space")
-    val space: String,
-    @SerializedName("state")
+    @SerialName("space")
+    val space: String? = null,
+    @SerialName("state")
     val state: String,
-    @SerializedName("street")
+    @SerialName("street")
     val street: String,
-    @SerializedName("summary")
-    val summary: String,
-    @SerializedName("transit")
-    val transit: String,
-    @SerializedName("weekly_price")
-    val weeklyPrice: Int,
-    @SerializedName("zipcode")
-    val zipcode: String
+    @SerialName("summary")
+    val summary: String? = null,
+    @SerialName("transit")
+    val transit: String? = null,
+    @SerialName("weekly_price")
+    val weeklyPrice: Int? = null,
+    @SerialName("zipcode")
+    val zipcode: String? = null
 )

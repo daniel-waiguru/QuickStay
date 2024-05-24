@@ -1,11 +1,10 @@
 package com.danielwaiguru.tripitacaandroid.properties.data.utils
 
 import android.content.Context
-import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.withContext
-import timber.log.Timber
+import kotlinx.serialization.json.Json
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -13,6 +12,7 @@ import java.io.InputStreamReader
 suspend inline fun <reified T> parseJson(
     path: String,
     context: Context,
+    kotlinxJson: Json,
     dispatcher: CoroutineDispatcher
 ): T = withContext(dispatcher){
     val file = context.assets.open(path)
@@ -23,6 +23,5 @@ suspend inline fun <reified T> parseJson(
         lines.forEach { stringBuilder.append(it) }
     }
     val jsonString = stringBuilder.toString()
-    Timber.d("Json $jsonString")
-    return@withContext Gson().fromJson(jsonString, T::class.java)
+    return@withContext kotlinxJson.decodeFromString(jsonString)
 }

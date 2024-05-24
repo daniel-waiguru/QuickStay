@@ -1,11 +1,12 @@
 package com.danielwaiguru.tripitacaandroid.properties.data.models.response
 
-import androidx.annotation.Keep
 import com.danielwaiguru.tripitacaandroid.properties.data.models.dtos.PropertyDto
-import com.google.gson.annotations.SerializedName
-@Keep
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class PropertiesResponse(
-    @SerializedName("total_count")
+    @SerialName("total_count")
     val totalCount: Int,
     val results: List<PropertyDto>
 )

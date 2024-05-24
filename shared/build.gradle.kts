@@ -3,6 +3,7 @@ plugins {
     id("tripitacaandroid.android.library")
     id("tripitacaandroid.android.hilt")
     id("tripitacaandroid.android.library.compose")
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 android {
@@ -10,4 +11,5 @@ android {
 }
 dependencies {
     implementation(libs.datastore.preferences.core)
+    implementation(libs.kotlinx.json)
 }
