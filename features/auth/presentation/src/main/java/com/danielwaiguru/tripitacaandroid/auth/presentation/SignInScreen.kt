@@ -33,7 +33,7 @@ import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaPasswor
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaPrimaryButton
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRoundedInputField
 import com.danielwaiguru.tripicaandroid.designsystem.previews.DevicePreviews
-import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTestTheme
+import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
 import com.danielwaiguru.tripitacaandroid.auth.presentation.components.GoogleSignInButton
 import com.danielwaiguru.tripitacaandroid.auth.presentation.utils.GetSignInDataContract
@@ -168,7 +168,7 @@ fun SignInScreen(
 @DevicePreviews
 @Composable
 fun SignInScreenPreview() {
-    TripitacaAndroidTestTheme {
+    TripitacaAndroidTheme {
         SignInScreen(
             modifier = Modifier
                 .fillMaxSize(),

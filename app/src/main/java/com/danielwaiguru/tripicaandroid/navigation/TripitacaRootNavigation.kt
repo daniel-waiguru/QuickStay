@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTestTheme
+import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.SignInScreenDestination
 import com.danielwaiguru.tripitacaandroid.auth.presentation.navigation.signInScreen
 import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.bookingScreen
@@ -18,7 +18,7 @@ import com.danielwaiguru.tripitacaandroid.properties.presentation.navigation.pro
 
 @Composable
 fun TripitacaRootNavigation() {
-    TripitacaAndroidTestTheme {
+    TripitacaAndroidTheme {
         val navController = rememberNavController()
         Surface(
             modifier = Modifier.fillMaxSize(),

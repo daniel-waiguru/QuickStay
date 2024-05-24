@@ -33,6 +33,7 @@ class SignInViewModel @Inject constructor(
         try {
             val task = googleSignInWrapper.getSignedInAccountFromIntent(data)
             val account = task.getResult(ApiException::class.java)
+            Timber.d("Tok: ${account.idToken}")
             val username = account.displayName ?: account.familyName ?: account.email ?: ""
             val user = User(
                 id = account.id,

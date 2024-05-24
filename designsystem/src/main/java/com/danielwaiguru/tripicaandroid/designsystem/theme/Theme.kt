@@ -79,7 +79,7 @@ private val DarkColorScheme =
     )
 
 @Composable
-fun TripitacaAndroidTestTheme(
+fun TripitacaAndroidTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {

@@ -43,7 +43,7 @@ import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaPrimary
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRoundedInputField
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaTopAppBar
 import com.danielwaiguru.tripicaandroid.designsystem.previews.DevicePreviews
-import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTestTheme
+import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
 import com.danielwaiguru.tripitacaandroid.booking.presentation.components.TripitacaDateRangePicker
 import com.danielwaiguru.tripitacaandroid.booking.presentation.models.BookingEvent
@@ -366,7 +366,7 @@ fun CountComponent(
 @DevicePreviews
 @Composable
 fun PeopleCountItemPreview() {
-    TripitacaAndroidTestTheme {
+    TripitacaAndroidTheme {
         PeopleCountItem(
             value = 1,
             modifier = Modifier.fillMaxWidth(),
@@ -380,7 +380,7 @@ fun PeopleCountItemPreview() {
 @DevicePreviews
 @Composable
 fun CountComponentPreview() {
-    TripitacaAndroidTestTheme {
+    TripitacaAndroidTheme {
         CountComponent(
             value = 1,
             modifier = Modifier.fillMaxWidth(),

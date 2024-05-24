@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import com.danielwaiguru.tripicaandroid.designsystem.previews.DevicePreviews
-import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTestTheme
+import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 
 @Composable
 fun IconText(
@@ -40,7 +40,7 @@ fun IconText(
 @DevicePreviews
 @Composable
 fun IconTextPreview() {
-    TripitacaAndroidTestTheme {
+    TripitacaAndroidTheme {
         IconText(
             icon = Icons.Outlined.LocationOn,
             text = "Nairobi, Kenya",

@@ -13,7 +13,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.danielwaiguru.tripicaandroid.designsystem.previews.DevicePreviews
-import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTestTheme
+import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,7 +37,7 @@ fun TripitacaTopAppBar(
 @DevicePreviews
 @Composable
 fun TripitacaTopAppBarPreview() {
-    TripitacaAndroidTestTheme {
+    TripitacaAndroidTheme {
         TripitacaTopAppBar(
             modifier = Modifier.fillMaxWidth(),
             title = {},

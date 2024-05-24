@@ -24,7 +24,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.danielwaiguru.tripicaandroid.designsystem.components.ProgressIndicator
 import com.danielwaiguru.tripicaandroid.designsystem.previews.DevicePreviews
-import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTestTheme
+import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 import com.danielwaiguru.tripitacaandroid.auth.presentation.R
 
 @Composable
@@ -91,7 +91,7 @@ fun GoogleSignInButton(
 @DevicePreviews
 @Composable
 fun GoogleSignInButtonPreview() {
-    TripitacaAndroidTestTheme {
+    TripitacaAndroidTheme {
         GoogleSignInButton(
             modifier = Modifier.fillMaxWidth(),
             text = stringResource(R.string.sign_in_with_google),
