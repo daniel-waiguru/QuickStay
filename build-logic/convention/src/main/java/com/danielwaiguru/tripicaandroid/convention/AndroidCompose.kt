@@ -19,9 +19,6 @@ internal fun Project.configureAndroidCompose(
             compose = true
         }
         val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-        composeOptions {
-            kotlinCompilerExtensionVersion = libs.findVersion("androidxComposeCompiler").get().toString()
-        }
         packaging {
             resources {
                 excludes += "/META-INF/{AL2.0,LGPL2.1}"
