@@ -2,10 +2,9 @@ An Android app that provides users with a seamless experience in exploring and b
 ## Prerequisites
 To run the project in your local environment, you need
 * Go to the android studio and create a new project using the 'Get from version control' option.
-* Paste this link `https://github.com/daniel-waiguru/TripitacaAndroid.git`
+* Paste this link `https://github.com/daniel-waiguru/QuickStay.git`
 * Add your Google maps API Key to `local.properties` file 
 * Build the project and run it
-* Ready app APK can be downloaded from [here](https://drive.google.com/file/d/1Jr4apy5jeSBAjQ5TOufV2t2auIbsVYM5/view?usp=drive_link)
 
 
 ## Tech-stack
