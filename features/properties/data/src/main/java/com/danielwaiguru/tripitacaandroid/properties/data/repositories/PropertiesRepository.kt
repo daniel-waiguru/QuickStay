@@ -10,8 +10,10 @@ import com.danielwaiguru.tripitacaandroid.shared.dispatchers.DispatcherProvider
 import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.ensureActive
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
+import kotlin.coroutines.coroutineContext
 
 interface PropertiesRepository {
     suspend fun getListing(): Result<List<Property>>
@@ -34,6 +36,7 @@ internal class PropertiesRepositoryImpl @Inject constructor(
             Result.success(response.results.map(PropertyDto::toProperty))
         } catch (e: Exception) {
             e.printStackTrace()
+            coroutineContext.ensureActive()
             Result.failure(e)
         }
     }
@@ -52,6 +55,7 @@ internal class PropertiesRepositoryImpl @Inject constructor(
             Result.success(property.toProperty())
         } catch (e: Exception) {
             e.printStackTrace()
+            coroutineContext.ensureActive()
             Result.failure(e)
         }
     }

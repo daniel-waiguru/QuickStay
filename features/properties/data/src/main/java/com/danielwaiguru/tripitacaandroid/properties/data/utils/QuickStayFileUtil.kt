@@ -18,9 +18,12 @@ suspend inline fun <reified T> parseJson(
     val file = context.assets.open(path)
     val bufferedReader = BufferedReader(InputStreamReader(file))
     val stringBuilder = StringBuilder()
+    ensureActive()
     bufferedReader.useLines { lines ->
-        ensureActive()
-        lines.forEach { stringBuilder.append(it) }
+        lines.forEach {
+            ensureActive()
+            stringBuilder.append(it)
+        }
     }
     val jsonString = stringBuilder.toString()
     return@withContext kotlinxJson.decodeFromString(jsonString)
