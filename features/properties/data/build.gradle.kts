@@ -7,14 +7,6 @@ plugins {
 
 android {
     namespace = "com.danielwaiguru.tripitacaandroid.properties.data"
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-        }
-        getByName("debug") {
-            isMinifyEnabled = false
-        }
-    }
 }
 dependencies {
     implementation(libs.kotlinx.json)

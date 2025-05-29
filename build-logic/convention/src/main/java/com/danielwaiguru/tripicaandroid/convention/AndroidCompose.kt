@@ -12,7 +12,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  * Configure Compose-specific options
  */
 internal fun Project.configureAndroidCompose(
-    commonExtension: CommonExtension<*, *, *, *, *>,
+    commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
     commonExtension.apply {
         buildFeatures {
@@ -35,12 +35,6 @@ internal fun Project.configureAndroidCompose(
             add("androidTestImplementation", libs.findLibrary("ui-test-junit4").get())
 
             add("debugImplementation", libs.findBundle("compose-testing-manifest").get())
-        }
-    }
-
-    tasks.withType<KotlinCompile>().configureEach {
-        kotlinOptions {
-            freeCompilerArgs = freeCompilerArgs
         }
     }
 }
