@@ -15,7 +15,7 @@ android {
 dependencies {
     implementation(projects.shared)
     implementation(projects.features.properties.data)
-    implementation(projects.features.auth.data)
+    implementation(projects.features.auth.contract)
     implementation(libs.maps.compose)
     implementation(libs.play.services.location)
 }

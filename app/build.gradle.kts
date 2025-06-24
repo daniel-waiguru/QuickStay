@@ -46,7 +46,7 @@ android {
 dependencies {
     implementation(projects.designsystem)
     implementation(projects.shared)
-    implementation(projects.features.auth.presentation)
+    implementation(projects.features.auth.lib)
     implementation(projects.features.properties.presentation)
     implementation(projects.features.booking.presentation)
     implementation(libs.core.ktx)

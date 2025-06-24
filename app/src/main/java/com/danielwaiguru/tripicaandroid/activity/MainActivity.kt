@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.danielwaiguru.tripicaandroid.navigation.TripitacaRootNavigation
+import com.danielwaiguru.tripicaandroid.navigation.QuickStayRootNavigation
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
             )
         )
         setContent {
-            TripitacaRootNavigation()
+            QuickStayRootNavigation()
         }
     }
 }

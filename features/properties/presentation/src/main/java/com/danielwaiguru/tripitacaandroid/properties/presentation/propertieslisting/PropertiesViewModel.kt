@@ -3,7 +3,7 @@ package com.danielwaiguru.tripitacaandroid.properties.presentation.propertieslis
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.danielwaiguru.tripitacaandroid.auth.data.repositories.UserDataRepository
+import com.danielwaiguru.auth.contract.GetUserUseCase
 import com.danielwaiguru.tripitacaandroid.properties.data.repositories.PropertiesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -19,7 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class PropertiesViewModel @Inject constructor(
     private val propertiesRepository: PropertiesRepository,
-    userDataRepository: UserDataRepository,
+    getUserUseCase: GetUserUseCase,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
     private val filter = savedStateHandle.getStateFlow<String?>(FILTER_KEY, null)
@@ -30,7 +30,7 @@ class PropertiesViewModel @Inject constructor(
     val viewState: StateFlow<PropertiesUIState> = combine(
         _viewState.asStateFlow(),
         filter,
-        userDataRepository.getUserName()
+        getUserUseCase.getUser()
     ) { state, filter, user ->
         state.copy(
             selectedAmenityFilter = if (
