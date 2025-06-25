@@ -7,17 +7,16 @@ import com.danielwaiguru.tripitacaandroid.properties.lib.data.models.dtos.Proper
 import com.danielwaiguru.tripitacaandroid.properties.lib.data.models.response.PropertiesResponse
 import com.danielwaiguru.tripitacaandroid.properties.lib.data.utils.parseJson
 import com.danielwaiguru.tripitacaandroid.properties.lib.domain.repositories.PropertiesRepository
-import com.danielwaiguru.tripitacaandroid.shared.dispatchers.Dispatcher
-import com.danielwaiguru.tripitacaandroid.shared.dispatchers.DispatcherProvider
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ensureActive
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
+import javax.inject.Named
 import kotlin.coroutines.coroutineContext
 
 internal class PropertiesRepositoryImpl @Inject constructor(
-    @Dispatcher(DispatcherProvider.IO) private val ioDispatcher: CoroutineDispatcher,
+    @Named("IO") private val ioDispatcher: CoroutineDispatcher,
     @ApplicationContext private val context: Context,
     private val kotlinxJson: Json
 ): PropertiesRepository {

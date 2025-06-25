@@ -7,8 +7,6 @@ import com.danielwaiguru.auth.contract.models.User
 import com.danielwaiguru.tripitacaandroid.auth.lib.R
 import com.danielwaiguru.tripitacaandroid.auth.lib.domain.repositories.UserDataRepository
 import com.danielwaiguru.tripitacaandroid.auth.lib.presentation.utils.GoogleSignInWrapper
-import com.danielwaiguru.tripitacaandroid.shared.dispatchers.Dispatcher
-import com.danielwaiguru.tripitacaandroid.shared.dispatchers.DispatcherProvider
 import com.google.android.gms.common.api.ApiException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
@@ -19,12 +17,13 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
+import javax.inject.Named
 
 @HiltViewModel
 internal class SignInViewModel @Inject constructor(
     private val googleSignInWrapper: GoogleSignInWrapper,
     private val userDataRepository: UserDataRepository,
-    @Dispatcher(DispatcherProvider.IO) private val ioDispatcher: CoroutineDispatcher
+    @Named("IO") private val ioDispatcher: CoroutineDispatcher
 ): ViewModel() {
     private val _viewState1: MutableStateFlow<SignInUIState> = MutableStateFlow(SignInUIState())
     val viewState1: StateFlow<SignInUIState> = _viewState1.asStateFlow()

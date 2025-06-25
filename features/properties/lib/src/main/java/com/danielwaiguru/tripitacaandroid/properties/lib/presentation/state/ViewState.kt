@@ -1,4 +1,4 @@
-package com.danielwaiguru.tripitacaandroid.shared.state
+package com.danielwaiguru.tripitacaandroid.properties.lib.presentation.state
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Stable

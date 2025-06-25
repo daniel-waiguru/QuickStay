@@ -2,7 +2,7 @@ package com.danielwaiguru.tripitacaandroid.properties.lib.data.mappers
 
 import com.danielwaiguru.properties.contract.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.lib.data.models.dtos.PropertyDto
-import com.danielwaiguru.tripitacaandroid.shared.dateutils.DateUtils
+import com.danielwaiguru.tripitacaandroid.properties.lib.domain.utils.DateUtils
 import java.util.Locale
 
 internal fun PropertyDto.toProperty(): Property = Property(

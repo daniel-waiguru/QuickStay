@@ -7,7 +7,7 @@ import androidx.navigation.toRoute
 import com.danielwaiguru.properties.contract.models.Property
 import com.danielwaiguru.tripitacaandroid.properties.lib.domain.repositories.PropertiesRepository
 import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.propertyinfo.navigation.PropertyInfoScreen
-import com.danielwaiguru.tripitacaandroid.shared.state.ViewState
+import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.state.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

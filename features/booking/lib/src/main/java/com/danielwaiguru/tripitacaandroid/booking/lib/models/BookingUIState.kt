@@ -3,7 +3,7 @@ package com.danielwaiguru.tripitacaandroid.booking.lib.models
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Stable
 import com.danielwaiguru.properties.contract.models.Property
-import com.danielwaiguru.tripitacaandroid.shared.dateutils.DateUtils.nextDayDate
+import com.danielwaiguru.tripitacaandroid.booking.lib.domain.utils.DateUtils.nextDayDate
 import java.util.Date
 
 @Stable

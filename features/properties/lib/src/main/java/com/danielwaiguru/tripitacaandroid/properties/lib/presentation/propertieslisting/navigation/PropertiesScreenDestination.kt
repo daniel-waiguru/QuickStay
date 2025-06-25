@@ -5,9 +5,9 @@ import androidx.compose.animation.core.tween
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.navigation.animationDuration
 import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.propertieslisting.PropertiesRoute
 import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.propertyinfo.navigation.navigateToPropertyInfo
-import com.danielwaiguru.tripitacaandroid.shared.navigation.animationDuration
 import kotlinx.serialization.Serializable
 
 @Serializable

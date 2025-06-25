@@ -6,8 +6,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.navigation.animationDuration
 import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.propertyinfo.PropertyInfoRoute
-import com.danielwaiguru.tripitacaandroid.shared.navigation.animationDuration
 import kotlinx.serialization.Serializable
 
 fun NavController.navigateToPropertyInfo(propertyId: String) {

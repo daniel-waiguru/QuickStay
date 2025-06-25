@@ -40,7 +40,6 @@
             <option value="$PROJECT_DIR$/platform/datastore" />
             <option value="$PROJECT_DIR$/platform/datastore/contract" />
             <option value="$PROJECT_DIR$/platform/datastore/lib" />
-            <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>
       </GradleProjectSettings>

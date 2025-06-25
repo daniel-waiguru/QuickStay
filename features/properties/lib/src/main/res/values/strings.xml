@@ -27,4 +27,5 @@
         <item quantity="one">%1$s\nBath</item>
         <item quantity="other">%1$s\nBaths</item>
     </plurals>
+    <string name="price_placeholder">Ksh %d</string>
 </resources>

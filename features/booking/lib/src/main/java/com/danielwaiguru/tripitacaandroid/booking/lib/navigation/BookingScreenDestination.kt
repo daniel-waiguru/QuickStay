@@ -7,14 +7,17 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.danielwaiguru.tripitacaandroid.booking.lib.BookingScreenRoute
-import com.danielwaiguru.tripitacaandroid.shared.navigation.animationDuration
 import kotlinx.serialization.Serializable
 
 fun NavController.navigateToBookingScreen(propertyId: String) {
     navigate(BookingScreen(propertyId = propertyId))
 }
+
 @Serializable
 internal data class BookingScreen(val propertyId: String)
+
+private const val animationDuration = 700
+
 fun NavGraphBuilder.bookingScreen(navController: NavHostController) {
     composable<BookingScreen>(
         enterTransition = {

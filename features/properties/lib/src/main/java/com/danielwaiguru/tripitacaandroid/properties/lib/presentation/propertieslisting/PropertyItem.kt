@@ -37,8 +37,7 @@ import com.danielwaiguru.properties.contract.models.Property
 import com.danielwaiguru.tripicaandroid.designsystem.components.IconText
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacAsyncImage
 import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRatingBar
-import com.danielwaiguru.tripitacaandroid.shared.R as SharedRes
-
+import com.danielwaiguru.tripitacaandroid.properties.lib.R
 
 @Composable
 internal fun PropertyItem(
@@ -147,7 +146,7 @@ internal fun PropertyItem(
                         withStyle(SpanStyle(fontWeight = FontWeight.ExtraBold)) {
                             append(
                                 stringResource(
-                                    id = SharedRes.string.price_placeholder,
+                                    id = R.string.price_placeholder,
                                     property.price
                                 )
                             )

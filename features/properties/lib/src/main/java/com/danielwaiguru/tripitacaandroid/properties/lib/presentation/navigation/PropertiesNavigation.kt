@@ -27,3 +27,5 @@ fun NavGraphBuilder.propertiesFeatureGraph(
         propertyInfoScreen(navController, onClickBookNow)
     }
 }
+
+internal const val animationDuration = 700

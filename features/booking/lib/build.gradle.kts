@@ -8,7 +8,6 @@ android {
     namespace = "com.danielwaiguru.tripitacaandroid.booking.lib"
 }
 dependencies {
-    implementation(projects.shared)
     implementation(projects.features.properties.contract)
 }
 

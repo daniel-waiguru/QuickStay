@@ -31,7 +31,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.outlined.LocationOn
-import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.FavoriteBorder
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -72,9 +71,8 @@ import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
 import com.danielwaiguru.tripitacaandroid.properties.lib.R
 import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.components.QuickStayCalendar
 import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.components.QuickStayGoogleMap
-import com.danielwaiguru.tripitacaandroid.shared.state.ViewState
+import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.state.ViewState
 import com.google.android.gms.maps.model.LatLng
-import com.danielwaiguru.tripitacaandroid.shared.R as SharedRes
 
 
 @Composable
@@ -321,7 +319,7 @@ fun PropertyInfoSection(
                     withStyle(SpanStyle(fontWeight = FontWeight.ExtraBold)) {
                         append(
                             stringResource(
-                                id = SharedRes.string.price_placeholder,
+                                id = R.string.price_placeholder,
                                 property.price
                             )
                         )

@@ -16,7 +16,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Add
-import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Remove
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
@@ -47,11 +46,10 @@ import com.danielwaiguru.tripicaandroid.designsystem.previews.DevicePreviews
 import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
 import com.danielwaiguru.tripitacaandroid.booking.lib.components.TripitacaDateRangePicker
+import com.danielwaiguru.tripitacaandroid.booking.lib.domain.utils.DateUtils.formatDate
 import com.danielwaiguru.tripitacaandroid.booking.lib.models.BookingEvent
 import com.danielwaiguru.tripitacaandroid.booking.lib.models.BookingUIState
 import com.danielwaiguru.tripitacaandroid.booking.lib.models.CountAction
-import com.danielwaiguru.tripitacaandroid.booking.lib.R
-import com.danielwaiguru.tripitacaandroid.shared.dateutils.DateUtils.formatDate
 import kotlinx.coroutines.launch
 
 @Composable

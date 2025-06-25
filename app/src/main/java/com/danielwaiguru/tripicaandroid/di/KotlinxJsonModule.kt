@@ -1,4 +1,4 @@
-package com.danielwaiguru.tripitacaandroid.shared.di
+package com.danielwaiguru.tripicaandroid.di
 
 import dagger.Module
 import dagger.Provides
