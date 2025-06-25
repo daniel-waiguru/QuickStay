@@ -13,8 +13,8 @@ import com.danielwaiguru.tripitacaandroid.auth.lib.presentation.navigation.SignI
 import com.danielwaiguru.tripitacaandroid.auth.lib.presentation.navigation.signInScreen
 import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.bookingScreen
 import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.navigateToBookingScreen
-import com.danielwaiguru.tripitacaandroid.properties.presentation.navigation.navigateToPropertiesGraph
-import com.danielwaiguru.tripitacaandroid.properties.presentation.navigation.propertiesFeatureGraph
+import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.navigation.navigateToPropertiesGraph
+import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.navigation.propertiesFeatureGraph
 
 @Composable
 fun QuickStayRootNavigation() {

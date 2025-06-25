@@ -47,7 +47,7 @@ dependencies {
     implementation(projects.designsystem)
     implementation(projects.shared)
     implementation(projects.features.auth.lib)
-    implementation(projects.features.properties.presentation)
+    implementation(projects.features.properties.lib)
     implementation(projects.features.booking.presentation)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

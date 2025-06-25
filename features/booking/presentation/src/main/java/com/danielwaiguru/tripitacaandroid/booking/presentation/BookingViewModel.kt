@@ -4,10 +4,10 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
+import com.danielwaiguru.properties.contract.GetPropertyUseCase
 import com.danielwaiguru.tripitacaandroid.booking.presentation.models.BookingEvent
 import com.danielwaiguru.tripitacaandroid.booking.presentation.models.BookingUIState
 import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.BookingScreen
-import com.danielwaiguru.tripitacaandroid.properties.data.repositories.PropertiesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BookingViewModel @Inject constructor(
-    private val propertiesRepository: PropertiesRepository,
+    private val getPropertyUseCase: GetPropertyUseCase,
     savedStateHandle: SavedStateHandle
 ): ViewModel(){
 
@@ -34,7 +34,7 @@ class BookingViewModel @Inject constructor(
 
     private fun getProperty(propertyId: String) {
         viewModelScope.launch {
-            val result = propertiesRepository.getFindPropertyById(propertyId)
+            val result = getPropertyUseCase(propertyId)
             if (result.isSuccess) {
                 _viewState.update { currentState ->
                     currentState.copy(property = result.getOrNull())

@@ -2,9 +2,10 @@ package com.danielwaiguru.tripitacaandroid.booking.presentation.models
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Stable
+import com.danielwaiguru.properties.contract.models.Property
 import com.danielwaiguru.tripitacaandroid.shared.dateutils.DateUtils.nextDayDate
-import com.danielwaiguru.tripitacaandroid.shared.models.Property
 import java.util.Date
+
 @Stable
 data class BookingUIState(
     val property: Property? = null,

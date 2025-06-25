@@ -9,6 +9,6 @@ android {
 }
 dependencies {
     implementation(projects.shared)
-    implementation(projects.features.properties.data)
+    implementation(projects.features.properties.contract)
 }
 
