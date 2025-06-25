@@ -11,5 +11,6 @@ android {
 dependencies {
     implementation(libs.play.services.auth)
     implementation(projects.features.auth.contract)
-    implementation(libs.datastore.preferences)
+    implementation(libs.datastore.preferences.core)
+    implementation(projects.platform.datastore.contract)
 }

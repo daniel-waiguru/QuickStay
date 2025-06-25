@@ -1,7 +1,7 @@
 package com.danielwaiguru.tripitacaandroid.auth.lib.data.repositories
 
 import com.danielwaiguru.auth.contract.models.User
-import com.danielwaiguru.tripitacaandroid.auth.lib.data.sources.local.QuickStayDataStore
+import com.danielwaiguru.datastore.contract.QuickStayDataStore
 import com.danielwaiguru.tripitacaandroid.auth.lib.domain.common.Constants.USERNAME_KEY
 import com.danielwaiguru.tripitacaandroid.auth.lib.domain.repositories.UserDataRepository
 import kotlinx.coroutines.flow.Flow

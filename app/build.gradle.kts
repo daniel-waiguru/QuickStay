@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.platform.datastore.lib)
     implementation(projects.designsystem)
     implementation(projects.shared)
     implementation(projects.features.auth.lib)

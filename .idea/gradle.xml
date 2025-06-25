@@ -36,6 +36,10 @@
             <option value="$PROJECT_DIR$/features/properties" />
             <option value="$PROJECT_DIR$/features/properties/contract" />
             <option value="$PROJECT_DIR$/features/properties/lib" />
+            <option value="$PROJECT_DIR$/platform" />
+            <option value="$PROJECT_DIR$/platform/datastore" />
+            <option value="$PROJECT_DIR$/platform/datastore/contract" />
+            <option value="$PROJECT_DIR$/platform/datastore/lib" />
             <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>
