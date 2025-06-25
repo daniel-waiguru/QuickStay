@@ -24,7 +24,7 @@ fun QuickStayGoogleMap(
     modifier: Modifier = Modifier
 ) {
     val cameraPositionState = rememberCameraPositionState {
-        position = CameraPosition.fromLatLngZoom(location, 10f)
+        position = CameraPosition.fromLatLngZoom(location, 15f)
     }
 
     val markerState = rememberUpdatedMarkerState(position = location)
