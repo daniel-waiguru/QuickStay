@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 internal interface UserDataRepository {
     suspend fun saveUser(username: User): Result<Unit>
 
-    fun getUserName(): Flow<User?>
+    fun getUser(): Flow<User?>
 }

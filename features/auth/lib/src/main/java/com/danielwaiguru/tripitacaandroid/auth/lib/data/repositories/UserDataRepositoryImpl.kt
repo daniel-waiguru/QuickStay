@@ -20,7 +20,7 @@ internal class UserDataRepositoryImpl @Inject constructor(
         Result.failure(e)
     }
 
-    override fun getUserName(): Flow<User?> {
+    override fun getUser(): Flow<User?> {
         return quickStayDataStore.get(USERNAME_KEY, "")
             .map {
                 if (it.isBlank()) {

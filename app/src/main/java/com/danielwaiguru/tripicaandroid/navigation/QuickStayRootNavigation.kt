@@ -11,8 +11,8 @@ import androidx.navigation.compose.rememberNavController
 import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 import com.danielwaiguru.tripitacaandroid.auth.lib.presentation.navigation.SignInScreen
 import com.danielwaiguru.tripitacaandroid.auth.lib.presentation.navigation.signInScreen
-import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.bookingScreen
-import com.danielwaiguru.tripitacaandroid.booking.presentation.navigation.navigateToBookingScreen
+import com.danielwaiguru.tripitacaandroid.booking.lib.navigation.bookingScreen
+import com.danielwaiguru.tripitacaandroid.booking.lib.navigation.navigateToBookingScreen
 import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.navigation.navigateToPropertiesGraph
 import com.danielwaiguru.tripitacaandroid.properties.lib.presentation.navigation.propertiesFeatureGraph
 

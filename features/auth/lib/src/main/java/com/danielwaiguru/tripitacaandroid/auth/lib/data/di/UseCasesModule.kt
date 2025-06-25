@@ -1,19 +1,21 @@
 package com.danielwaiguru.tripitacaandroid.auth.lib.data.di
 
 import com.danielwaiguru.auth.contract.GetUserUseCase
-import com.danielwaiguru.tripitacaandroid.auth.lib.domain.usecases.GetUserUseCaseImpl
-import dagger.Binds
+import com.danielwaiguru.tripitacaandroid.auth.lib.domain.repositories.UserDataRepository
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal abstract class UseCasesModule {
-    @Binds
+object UseCasesModule {
+    @Provides
     @Singleton
-    internal abstract fun bindGetUserUseCase(
-        getUserUseCaseImpl: GetUserUseCaseImpl
-    ): GetUserUseCase
+    internal fun provideGetUserUseCase(
+        userDataRepository: UserDataRepository
+    ): GetUserUseCase = GetUserUseCase {
+        userDataRepository.getUser()
+    }
 }

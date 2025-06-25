@@ -30,7 +30,7 @@ internal class PropertiesViewModel @Inject constructor(
     val viewState: StateFlow<PropertiesUIState> = combine(
         _viewState.asStateFlow(),
         filter,
-        getUserUseCase.getUser()
+        getUserUseCase()
     ) { state, filter, user ->
         state.copy(
             selectedAmenityFilter = if (
