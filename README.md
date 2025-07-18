@@ -22,31 +22,34 @@ To run the project in your local environment, you need
         * [DataStore](https://developer.android.com/topic/libraries/architecture/datastore) - A data storage solution backed using Kotlin Coroutines and Flows that allows you to store key-value pairs or typed objects with protocol buffers
     * [Timber](https://github.com/JakeWharton/timber) - a highly extensible Android logger.
 
-* Architecture
+## Architecture
 
 This projects uses MVVM—Model View ViewModel pattern with Feature-based modularization where a modules are categorised into three categories
   ### Foundation
 This category contains foundational extensions to frameworks eg in the project designsystem that is reused across feature implementations library
 
   ### Platform
-These category contains the building blocks to be able to build the features, examples include analytics
+This category contains the building blocks to be able to build the features, examples include analytics
 
   ### Features
-This category contains the features/functionalities of the application is this case authentication, properties and booking
+This category contains the features/functionalities of the application, in this case, authentication, properties, and booking
 
   ### Apps
 This category contains apps that aggregate the feature they need, this could be the main app, an instant app or an internal app
 
-Modules is Platform and Feature category are also split into two modules
-  #### Contract
-This is a lightweight module that contains interfaces definition and models to expose the data needed by other modules eg. authentication feature api exposes session information to other features
+Modules in the Platform and Features categories are also split into two modules
+  ##### Contract
+This is a lightweight module that contains interface definitions and models to expose the data needed by other modules eg. the authentication feature api exposes session information to other features
 
-  #### Lib
-This is where the implementation code of that particular feature is providing implementation of the interface defined in `Contract`
+  ##### Lib
+This is where the implementation code of that particular feature lives and provides implementation of the interface defined in `Contract`
+
 
 > N/B This is a small project, hence Modularization is not necessary, but it is implemented to demonstrate how Feature-based modularization can be implemented in a large-scale complex project
   
-  <img src="/docs/quickstay_architecture_diagram.png" />
+<img src="/docs/quickstay_architecture_diagram.png" />
+
+
 * Gradle
     * [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - An alternative syntax for writing Gradle build scripts using Koltin.
     * [Version Catalogs](https://developer.android.com/build/migrate-to-catalogs) - A scalable way of maintaining dependencies and plugins in a multi-module project.
@@ -56,7 +59,7 @@ This is where the implementation code of that particular feature is providing im
  
 ## Dependencies
 
-All the dependencies (external libraries) are managed using version catalogs and defined in a single place `gradle/libs.versions.toml` file. This is a scalable approach to manage dependencies and use the same dependency version across all modules.
+All the dependencies (external libraries) are managed using version catalogs and defined in a single place, `gradle/libs.versions.toml` file. This is a scalable approach to manage dependencies and use the same dependency version across all modules.
 
 ## Code Analysis
 This repo uses Android Studio's built-in linter to analyze the codebase and identify potential code style violations, code quality issues, etc.
