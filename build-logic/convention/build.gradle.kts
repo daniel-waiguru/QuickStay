@@ -40,7 +40,7 @@ gradlePlugin {
             implementationClass = "AndroidFeatureConventionPlugin"
         }
         register("jvmLibrary") {
-            id = "tripitacaandroid.jvm.library"
+            id = "quickstay.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
         }
     }

@@ -22,7 +22,6 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
             dependencies {
                 add("implementation", project(":designsystem"))
-                add("implementation", project(":shared"))
                 add("implementation", libs.findLibrary("kotlinx-json").get())
                 add("implementation", libs.findLibrary("coil.kt").get())
                 add("implementation", libs.findLibrary("coil.kt.compose").get())
