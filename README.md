@@ -22,7 +22,7 @@ To run the project in your local environment, you need
         * [DataStore](https://developer.android.com/topic/libraries/architecture/datastore) - A data storage solution backed using Kotlin Coroutines and Flows that allows you to store key-value pairs or typed objects with protocol buffers
     * [Timber](https://github.com/JakeWharton/timber) - a highly extensible Android logger.
 
-* Architecture
+## Architecture
 
 This project uses the MVVM(Model View ViewModel) pattern with Feature-based modularization, where modules are categorised into three categories
   ### Foundation
