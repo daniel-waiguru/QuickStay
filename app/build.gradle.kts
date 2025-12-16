@@ -1,4 +1,3 @@
-import com.android.tools.r8.internal.Jv
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
