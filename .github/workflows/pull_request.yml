@@ -60,5 +60,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
 
+      - name: Create local.properties file
+        env:
+          LOCAL_PROPERTIES: ${{secrets.LOCAL_PROPERTIES}}
+        run: echo $LOCAL_PROPERTIES > local.properties
+
       - name: Run Unit Tests
         run: ./gradlew test --stacktrace
