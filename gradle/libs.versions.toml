@@ -48,7 +48,7 @@ jacoco = "0.8.7"
 googleAuth = "21.5.1"
 protobuf = "4.33.5"
 protobufPlugin = "0.9.6"
-datastore = "1.2.0"
+datastore = "1.2.1"
 mapsplatformSecrets = "2.0.1"
 kotlinx-json = "1.10.0"
 
