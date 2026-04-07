@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.play.services.auth)
+    implementation(libs.bundles.auth)
     implementation(projects.features.auth.contract)
     implementation(libs.datastore.preferences.core)
     implementation(projects.platform.datastore.contract)
