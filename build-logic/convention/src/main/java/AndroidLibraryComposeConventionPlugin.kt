@@ -1,10 +1,11 @@
 
-import com.android.build.gradle.LibraryExtension
+import com.android.build.api.dsl.LibraryExtension
 import com.danielwaiguru.tripicaandroid.convention.configureAndroidCompose
 import com.danielwaiguru.tripicaandroid.convention.getPluginId
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
+
 class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {

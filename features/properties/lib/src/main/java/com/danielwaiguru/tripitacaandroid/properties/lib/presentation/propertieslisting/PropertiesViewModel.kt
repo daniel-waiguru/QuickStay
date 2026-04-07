@@ -49,7 +49,7 @@ internal class PropertiesViewModel @Inject constructor(
                 state.properties
             },
             username = if (user?.displayName.isNullOrBlank().not()) {
-                user?.displayName ?: "Anonymous"
+                user.displayName ?: "Anonymous"
             } else {
                 "Anonymous"
             },

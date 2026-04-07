@@ -1,6 +1,6 @@
 
+import com.android.build.api.dsl.LibraryExtension
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
-import com.android.build.gradle.LibraryExtension
 import com.danielwaiguru.tripicaandroid.convention.configureKotlinAndroid
 import com.danielwaiguru.tripicaandroid.convention.configurePrintApksTask
 import com.danielwaiguru.tripicaandroid.convention.libs
@@ -15,7 +15,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.library")
-                apply("org.jetbrains.kotlin.android")
             }
 
             extensions.configure<LibraryExtension> {
@@ -37,6 +36,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             dependencies {
                 add("androidTestImplementation", kotlin("test"))
                 add("testImplementation", kotlin("test"))
+                add("testImplementation", libs.findLibrary("junit4").get())
                 add("coreLibraryDesugaring", libs.findLibrary("android-desugarJdkLibs").get())
                 "implementation"(libs.findLibrary("timber").get())
             }
