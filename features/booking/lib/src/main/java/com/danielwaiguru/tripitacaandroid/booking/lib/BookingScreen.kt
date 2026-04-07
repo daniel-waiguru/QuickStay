@@ -82,7 +82,7 @@ fun BookingScreen(
     LaunchedEffect(key1 = state.errorMessage) {
         val error = state.errorMessage
         if (error.isNullOrBlank().not()) {
-            snackbarHostState.showSnackbar(error!!)
+            snackbarHostState.showSnackbar(error)
         }
     }
     val scope = rememberCoroutineScope()
