@@ -37,6 +37,8 @@ minSdk = "24"
 playServicesLocation = "21.3.0"
 androidDesugarJdkLibs = "2.1.5"
 googleAuth = "21.5.1"
+googleId = "1.2.0"
+androidxCredentials = "1.5.0"
 protobuf = "4.34.1"
 protobufPlugin = "0.9.6"
 datastore = "1.2.1"
@@ -95,6 +97,8 @@ javax = { module = "javax.inject:javax.inject", version.ref = "javax" }
 
 google-fonts = { module = "androidx.compose.ui:ui-text-google-fonts", version.ref = "googleFont" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "googleAuth" }
+credentials = { module = "androidx.credentials:credentials", version.ref = "androidxCredentials" }
+googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleId" }
 
 kotlinx-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-json" }
 
@@ -152,3 +156,5 @@ compose = [
     "androidx-navigation-compose"
 ]
 compose-testing-manifest = ["ui-tooling", "ui-test-manifest"]
+
+auth = ["play-services-auth", "credentials", "googleid"]

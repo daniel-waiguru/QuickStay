@@ -1,9 +1,6 @@
 package com.danielwaiguru.tripitacaandroid.auth.lib.presentation
 
-import android.app.Activity
-import android.content.Intent
 import android.widget.Toast
-import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,10 +34,7 @@ import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
 import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
 import com.danielwaiguru.tripitacaandroid.auth.lib.R
 import com.danielwaiguru.tripitacaandroid.auth.lib.presentation.components.GoogleSignInButton
-import com.danielwaiguru.tripitacaandroid.auth.lib.presentation.utils.GetSignInDataContract
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.danielwaiguru.tripitacaandroid.auth.lib.presentation.utils.rememberGoogleSignInLauncher
 
 
 @Composable
@@ -49,45 +43,37 @@ internal fun SignInRoute(
     viewModel: SignInViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.viewState1.collectAsStateWithLifecycle()
+    val webClient = stringResource(id = R.string.web_client_id)
+    val authLauncher = rememberGoogleSignInLauncher(
+        webClientId = webClient,
+        onResult = viewModel::onGoogleSignInResult
+    )
     SignInScreen(
         modifier = Modifier
             .fillMaxSize()
             .padding(horizontal = Dimensions.ScreenPadding),
-        onSignInResult = viewModel::onUserSignIn,
         onNavigateToHome = onNavigateToHome,
         state = uiState,
         onPasswordChange = viewModel::onPasswordChange,
         onEmailChange = viewModel::onEmailChange,
-        onErrorShown = viewModel::onErrorShown
+        onErrorShown = viewModel::onErrorShown,
+        onSignInWithGoogle = {
+            authLauncher.launch()
+        }
     )
 }
 
 @Composable
 private fun SignInScreen(
     modifier: Modifier = Modifier,
-    onSignInResult: (Intent?) -> Unit,
     onNavigateToHome: () -> Unit,
     onEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
     onErrorShown: () -> Unit,
+    onSignInWithGoogle: () -> Unit,
     state: SignInUIState
 ) {
-    val webClient = stringResource(id = R.string.web_client_id)
     val context = LocalContext.current
-    val activity = context as Activity
-    val googleSignInClient: GoogleSignInClient by lazy {
-        val gso = GoogleSignInOptions.Builder(
-            GoogleSignInOptions.DEFAULT_SIGN_IN
-        )
-            .requestIdToken(webClient)
-            .requestEmail()
-            .build()
-        GoogleSignIn.getClient(activity, gso)
-    }
-    val getGoogleSignInLauncher = rememberLauncherForActivityResult(
-        contract = GetSignInDataContract(),
-        onResult = onSignInResult
-    )
     val error = state.errorId?.let { stringResource(id = it) }
     LaunchedEffect(key1 = state.errorId) {
         if (state.errorId != null) {
@@ -124,9 +110,7 @@ private fun SignInScreen(
                 .fillMaxWidth()
                 .padding(top = 80.dp),
             text = stringResource(R.string.sign_in_with_google),
-            onClick = {
-                getGoogleSignInLauncher.launch(googleSignInClient)
-            },
+            onClick = onSignInWithGoogle,
             loading = state.isLoading
         )
         Row(
@@ -173,12 +157,12 @@ fun SignInScreenPreview() {
         SignInScreen(
             modifier = Modifier
                 .fillMaxSize(),
-            onSignInResult = {},
             onNavigateToHome = {},
             state = SignInUIState(),
             onPasswordChange = {},
             onEmailChange = {},
-            onErrorShown = {}
+            onErrorShown = {},
+            onSignInWithGoogle = {},
         )
     }
 }
