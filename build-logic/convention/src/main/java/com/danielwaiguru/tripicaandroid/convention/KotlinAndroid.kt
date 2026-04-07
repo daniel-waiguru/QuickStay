@@ -18,13 +18,13 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
  * Configure base Kotlin with Android options
  */
 internal fun Project.configureKotlinAndroid(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
 ) {
     commonExtension.apply {
         compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
-        defaultConfig {
+        defaultConfig.apply {
             minSdk = libs.findVersion("minSdk").get().toString().toInt()
-            buildTypes {
+            buildTypes.apply {
                 getByName("release") {
                     isMinifyEnabled = true
                 }
@@ -37,7 +37,7 @@ internal fun Project.configureKotlinAndroid(
             }
         }
 
-        compileOptions {
+        compileOptions.apply {
             sourceCompatibility = JavaVersion.VERSION_17
             targetCompatibility = JavaVersion.VERSION_17
             isCoreLibraryDesugaringEnabled = true
