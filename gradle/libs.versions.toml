@@ -43,7 +43,7 @@ protobuf = "4.34.1"
 protobufPlugin = "0.9.6"
 datastore = "1.2.1"
 mapsplatformSecrets = "2.0.1"
-kotlinx-json = "1.10.0"
+kotlinx-json = "1.11.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
