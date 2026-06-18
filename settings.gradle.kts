@@ -22,6 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "TripitacaAndroid"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+include(":core:testing")
 include(":designsystem")
 include(":features:auth:lib")
 include(":features:auth:contract")

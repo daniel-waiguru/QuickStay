@@ -44,6 +44,7 @@ protobufPlugin = "0.10.0"
 datastore = "1.2.1"
 mapsplatformSecrets = "2.0.1"
 kotlinx-json = "1.11.0"
+jacoco = "0.8.13"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -158,3 +159,13 @@ compose = [
 compose-testing-manifest = ["ui-tooling", "ui-test-manifest"]
 
 auth = ["play-services-auth", "credentials", "googleid"]
+
+# Unit-testing dependencies shared by every library/feature module
+test = [
+    "mockk",
+    "turbine",
+    "coroutines-test",
+    "google-truth",
+    "androidx-arch-core-testing",
+    "robolectric"
+]

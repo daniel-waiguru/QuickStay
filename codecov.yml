@@ -1,0 +1,37 @@
+codecov:
+  require_ci_to_pass: true
+
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"
+  status:
+    # Soft gate: Codecov posts a pass/fail commit status, it does not fail the Gradle build.
+    project:
+      default:
+        target: 80%
+        threshold: 1%
+    patch:
+      default:
+        target: 80%
+        threshold: 5%
+
+comment:
+  layout: "reach, diff, flags, files"
+  behavior: default
+  require_changes: false
+
+# Mirror the JaCoCo aggregated-report filters so the Codecov UI matches the merged report.
+ignore:
+  - "**/di/**"
+  - "**/navigation/**"
+  - "**/components/**"
+  - "**/presentation/utils/**"
+  - "**/data/models/**"
+  - "**/data/utils/**"
+  - "**/*Screen.kt"
+  - "**/PropertyItem.kt"
+  - "**/data/repositories/PropertiesRepositoryImpl.kt"
+  - "**/core/testing/**"
+  - "**/build-logic/**"
+  - "**/*.gradle.kts"

@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/daniel-waiguru/QuickStay/branch/main/graph/badge.svg)](https://codecov.io/gh/daniel-waiguru/QuickStay)
+
 An Android app that provides users with a seamless experience in exploring and booking accommodations, It presents a list of property listings using data from the provided JSON source, written 100% in Kotlin and Jetpack Compose using Android Jetpack Components.
 ## Prerequisites
 To run the project in your local environment, you need
