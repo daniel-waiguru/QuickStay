@@ -1,7 +1,7 @@
 
 import com.android.build.api.dsl.LibraryExtension
-import com.danielwaiguru.tripicaandroid.convention.getPluginId
-import com.danielwaiguru.tripicaandroid.convention.libs
+import com.danielwaiguru.quickstay.convention.getPluginId
+import com.danielwaiguru.quickstay.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

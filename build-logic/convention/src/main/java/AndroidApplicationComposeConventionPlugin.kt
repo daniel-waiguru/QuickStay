@@ -1,7 +1,7 @@
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.danielwaiguru.tripicaandroid.convention.configureAndroidCompose
-import com.danielwaiguru.tripicaandroid.convention.getPluginId
+import com.danielwaiguru.quickstay.convention.configureAndroidCompose
+import com.danielwaiguru.quickstay.convention.getPluginId
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType

@@ -34,9 +34,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.danielwaiguru.properties.contract.models.Property
-import com.danielwaiguru.tripicaandroid.designsystem.components.IconText
-import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacAsyncImage
-import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaRatingBar
+import com.danielwaiguru.quickstay.designsystem.components.IconText
+import com.danielwaiguru.quickstay.designsystem.components.TripitacAsyncImage
+import com.danielwaiguru.quickstay.designsystem.components.TripitacaRatingBar
 import com.danielwaiguru.tripitacaandroid.properties.lib.R
 
 @Composable

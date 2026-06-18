@@ -1,9 +1,9 @@
 
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
-import com.danielwaiguru.tripicaandroid.convention.configureKotlinAndroid
-import com.danielwaiguru.tripicaandroid.convention.configurePrintApksTask
-import com.danielwaiguru.tripicaandroid.convention.libs
+import com.danielwaiguru.quickstay.convention.configureKotlinAndroid
+import com.danielwaiguru.quickstay.convention.configurePrintApksTask
+import com.danielwaiguru.quickstay.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
