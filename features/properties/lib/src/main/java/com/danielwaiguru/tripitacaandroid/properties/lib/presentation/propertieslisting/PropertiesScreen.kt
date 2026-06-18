@@ -39,10 +39,10 @@ import androidx.core.net.toUri
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.danielwaiguru.properties.contract.models.Property
-import com.danielwaiguru.tripicaandroid.designsystem.components.ShimmerProgressIndicator
-import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacAsyncImage
-import com.danielwaiguru.tripicaandroid.designsystem.components.TripitacaTopAppBar
-import com.danielwaiguru.tripicaandroid.designsystem.utils.Dimensions
+import com.danielwaiguru.quickstay.designsystem.components.ShimmerProgressIndicator
+import com.danielwaiguru.quickstay.designsystem.components.TripitacAsyncImage
+import com.danielwaiguru.quickstay.designsystem.components.TripitacaTopAppBar
+import com.danielwaiguru.quickstay.designsystem.utils.Dimensions
 import com.danielwaiguru.tripitacaandroid.properties.lib.R
 
 @Composable

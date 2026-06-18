@@ -1,0 +1,33 @@
+package com.danielwaiguru.quickstay.convention
+
+import com.android.build.api.dsl.CommonExtension
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.dependencies
+
+/**
+ * Configure Compose-specific options
+ */
+internal fun Project.configureAndroidCompose(
+    commonExtension: CommonExtension,
+) {
+    commonExtension.buildFeatures.apply {
+        compose = true
+    }
+    commonExtension.packaging.apply {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "META-INF/*.md"
+        }
+    }
+
+    this@configureAndroidCompose.dependencies {
+        val bom = libs.findLibrary("compose-bom").get()
+        add("implementation", platform(bom))
+        add("implementation", libs.findBundle("compose").get())
+
+        add("androidTestImplementation", platform(bom))
+        add("androidTestImplementation", libs.findLibrary("ui-test-junit4").get())
+
+        add("debugImplementation", libs.findBundle("compose-testing-manifest").get())
+    }
+}

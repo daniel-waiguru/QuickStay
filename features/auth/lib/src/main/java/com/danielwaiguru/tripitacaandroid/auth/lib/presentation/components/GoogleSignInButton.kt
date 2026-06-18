@@ -22,9 +22,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.danielwaiguru.tripicaandroid.designsystem.components.ProgressIndicator
-import com.danielwaiguru.tripicaandroid.designsystem.previews.DevicePreviews
-import com.danielwaiguru.tripicaandroid.designsystem.theme.TripitacaAndroidTheme
+import com.danielwaiguru.quickstay.designsystem.components.ProgressIndicator
+import com.danielwaiguru.quickstay.designsystem.previews.DevicePreviews
+import com.danielwaiguru.quickstay.designsystem.theme.TripitacaAndroidTheme
 import com.danielwaiguru.tripitacaandroid.auth.lib.R
 
 @Composable

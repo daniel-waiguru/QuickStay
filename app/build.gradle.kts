@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.danielwaiguru.tripicaandroid"
+    namespace = "com.danielwaiguru.quickstay"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.danielwaiguru.tripicaandroid"
+        applicationId = "com.danielwaiguru.quickstay"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = (project.findProperty("versionCode") as String?)?.toInt() ?: 1
