@@ -17,4 +17,6 @@ dependencies {
     implementation(projects.features.auth.contract)
     implementation(libs.maps.compose)
     implementation(libs.play.services.location)
+
+    testImplementation(projects.core.testing)
 }

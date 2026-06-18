@@ -13,4 +13,6 @@ dependencies {
     implementation(projects.features.auth.contract)
     implementation(libs.datastore.preferences.core)
     implementation(projects.platform.datastore.contract)
+
+    testImplementation(projects.core.testing)
 }

@@ -9,5 +9,7 @@ android {
 }
 dependencies {
     implementation(projects.features.properties.contract)
+
+    testImplementation(projects.core.testing)
 }
 
