@@ -3,7 +3,7 @@
 An Android app that provides users with a seamless experience in exploring and booking accommodations, It presents a list of property listings using data from the provided JSON source, written 100% in Kotlin and Jetpack Compose using Android Jetpack Components.
 
 ## Download
-Grab the latest build via Firebase App Distribution: [Download the APK](https://appdistribution.firebase.dev/i/04b9284bd3721f2b)
+Grab the latest build via Firebase App Distribution: [Download the APK](https://appdistribution.firebase.dev/i/e9e615db94011886)
 
 ## Prerequisites
 To run the project in your local environment, you need
