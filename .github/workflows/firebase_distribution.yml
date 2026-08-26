@@ -5,6 +5,10 @@ on:
     branches:
       [ main ]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   distribute:
     runs-on: ubuntu-latest
@@ -15,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: setup JDK 17
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v6
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -74,5 +78,6 @@ jobs:
         with:
           appId: ${{ secrets.FIREBASE_APP_ID }}
           token: ${{ secrets.FIREBASE_TOKEN }}
+          groups: quickstay-testers
           file: app/build/outputs/apk/release/app-release.apk
           releaseNotesFile: ${{ runner.temp }}/release_notes.txt
