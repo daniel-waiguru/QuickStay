@@ -1,16 +1,79 @@
 name: Firebase App Distribution
 
 on:
-  push:
-    branches:
-      [ main ]
+  # Runs weekly, but the `check` job below lets a build through only once per
+  # fortnight, and only when there are new commits since the last distribution.
+  schedule:
+    - cron: '0 6 * * 1' # Mondays, 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Distribute even if the fortnight has not elapsed or there are no new commits'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write # needed to move the last-distribution tag
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+env:
+  LAST_DISTRIBUTION_TAG: firebase-distribution/last
+  MIN_DAYS_BETWEEN_BUILDS: 13 # 13, not 14, so cron jitter can't push us to a 3-week gap
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      should_build: ${{ steps.gate.outputs.should_build }}
+      changelog_range: ${{ steps.gate.outputs.changelog_range }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98
+        with:
+          fetch-depth: 0
+
+      - name: Decide whether to build
+        id: gate
+        env:
+          FORCE: ${{ inputs.force }}
+        run: |
+          set -euo pipefail
+          TAG="refs/tags/$LAST_DISTRIBUTION_TAG"
+
+          if ! git rev-parse -q --verify "$TAG" >/dev/null; then
+            echo "No $LAST_DISTRIBUTION_TAG tag yet - this is the first distribution."
+            echo "should_build=true" >> "$GITHUB_OUTPUT"
+            echo "changelog_range=-15" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          LAST_SHA=$(git rev-list -n 1 "$TAG")
+          LAST_EPOCH=$(git for-each-ref --format='%(creatordate:unix)' "$TAG")
+          AGE_DAYS=$(( ( $(date -u +%s) - LAST_EPOCH ) / 86400 ))
+          NEW_COMMITS=$(git rev-list --count "$LAST_SHA..HEAD")
+
+          echo "Last distribution: $LAST_SHA ($AGE_DAYS days ago), $NEW_COMMITS new commit(s) since."
+          echo "changelog_range=$LAST_SHA..${{ github.sha }}" >> "$GITHUB_OUTPUT"
+
+          if [ "$FORCE" = "true" ]; then
+            echo "Forced via workflow_dispatch."
+            echo "should_build=true" >> "$GITHUB_OUTPUT"
+          elif [ "$NEW_COMMITS" -eq 0 ]; then
+            echo "No changes since the last distribution - skipping."
+            echo "should_build=false" >> "$GITHUB_OUTPUT"
+          elif [ "$AGE_DAYS" -lt "$MIN_DAYS_BETWEEN_BUILDS" ]; then
+            echo "Only $AGE_DAYS days since the last distribution - skipping until the fortnight elapses."
+            echo "should_build=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_build=true" >> "$GITHUB_OUTPUT"
+          fi
+
   distribute:
+    needs: check
+    if: needs.check.outputs.should_build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -47,13 +110,9 @@ jobs:
         run: echo "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/release.keystore"
 
       - name: Generate changelog
+        env:
+          RANGE: ${{ needs.check.outputs.changelog_range }}
         run: |
-          PREV="${{ github.event.before }}"
-          if [ -z "$PREV" ] || [ "$PREV" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$PREV" 2>/dev/null; then
-            RANGE="-10"
-          else
-            RANGE="$PREV..${{ github.sha }}"
-          fi
           {
             echo "Build 1.0.${{ github.run_number }} (${GITHUB_SHA::7})"
             echo ""
@@ -81,3 +140,11 @@ jobs:
           groups: quickstay-testers
           file: app/build/outputs/apk/release/app-release.apk
           releaseNotesFile: ${{ runner.temp }}/release_notes.txt
+
+      - name: Record distributed commit
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git tag -f -a "$LAST_DISTRIBUTION_TAG" -m "Distributed 1.0.${{ github.run_number }}" "${{ github.sha }}"
+          git push -f origin "refs/tags/$LAST_DISTRIBUTION_TAG"
